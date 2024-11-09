@@ -6,8 +6,57 @@ public static partial class UiManager
 
     public static class UiName
     {
+        public const string Hud = "Hud";
         public const string NewProjectPopup = "NewProjectPopup";
         public const string WelcomeUi = "WelcomeUi";
+    }
+
+    /// <summary>
+    /// 创建 Hud, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.Hud.HudPanel Create_Hud()
+    {
+        return CreateUi<Game.Scripts.Ui.Hud.HudPanel>(UiName.Hud);
+    }
+
+    /// <summary>
+    /// 打开 Hud, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.Hud.HudPanel Open_Hud()
+    {
+        return OpenUi<Game.Scripts.Ui.Hud.HudPanel>(UiName.Hud);
+    }
+
+    /// <summary>
+    /// 隐藏 Hud 的所有实例
+    /// </summary>
+    public static void Hide_Hud()
+    {
+        var uiInstance = Get_Hud_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 Hud 的所有实例
+    /// </summary>
+    public static void Destroy_Hud()
+    {
+        var uiInstance = Get_Hud_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 Hud 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.Hud.HudPanel[] Get_Hud_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.Hud.HudPanel>(nameof(Game.Scripts.Ui.Hud.Hud));
     }
 
     /// <summary>
