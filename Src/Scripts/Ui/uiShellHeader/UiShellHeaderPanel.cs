@@ -8,6 +8,12 @@ public partial class UiShellHeaderPanel : UiShellHeader
 {
     [Export] private string _title = "";
 
+    public void SetTitle(string title)
+    {
+        _title = title;
+        UpdateUi();
+    }
+
     public override void _Ready()
     {
         base._Ready();

@@ -1,12 +1,16 @@
-﻿namespace Game.Scripts;
+﻿using Game.Scripts.Data;
 
-public static class ProjectWriter
+namespace Game.Scripts;
+
+public class ProjectWriter(Project project)
 {
-    public static void Store()
+    public Project Project => project;
+    
+    public void Store()
     {
     }
 
-    public static void LoadProjectFile(string path)
+    public void LoadProjectFile(string path)
     {
     }
 }

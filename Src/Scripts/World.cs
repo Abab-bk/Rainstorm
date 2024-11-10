@@ -1,6 +1,7 @@
 using DsUi;
 using Game.Scripts.Classes;
 using Godot;
+using GodotTask;
 
 namespace Game.Scripts;
 
@@ -16,6 +17,12 @@ public partial class World : Node2D
         _stateMachine.OnUpdate += OnStateMachineUpdate;
         
         _stateMachine.SetTrigger("ToPreBoot");
+        
+        EventBus.EnterProject += project =>
+        {
+            _stateMachine.SetTrigger("ToEditor");
+            UiManager.Open_Hud().Config(new ProjectWriter(project));
+        };
     }
     
     private void OnStateMachineUpdate(string state, float delta)
@@ -29,23 +36,33 @@ public partial class World : Node2D
             case "PreBoot":
                 Global.World = this;
                 _stateMachine.SetTrigger("ToBooting");
-                
                 break;
             case "Booting":
-                UiManager.Open_WelcomeUi();
-                
-                // load
-                AppSaver.Load();
-                
-                _stateMachine.SetTrigger("ToInitGame");
+                GDTask.NextFrame().ContinueWith(() =>
+                {
+                    _stateMachine.SetTrigger("ToInitGame");
+                });
                 break;
             case "InitGame":
-#if IMGUI
-                AddChild(new Debugger());
-#endif
-                _stateMachine.SetTrigger("ToInGame");
+                GDTask.NextFrame().ContinueWith(() =>
+                {
+                    _stateMachine.SetTrigger("ToInGame");
+                });
                 break;
             case "InGame":
+                GDTask.NextFrame().ContinueWith(() =>
+                {
+                    _stateMachine.SetTrigger("ToWelcome");
+                });
+                break;
+            case "InWelcome":
+                UiManager.Open_WelcomeUi();
+                // load
+                AppSaver.Load();
+                break;
+            case "InEditor":
+                UiManager.Destroy_WelcomeUi();
+                
                 break;
             case "End":
                 break;
