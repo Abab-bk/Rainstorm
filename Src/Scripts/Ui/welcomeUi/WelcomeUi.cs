@@ -8,6 +8,19 @@ using DsUi;
 public abstract partial class WelcomeUi : UiBase
 {
     /// <summary>
+    /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.ColorRect"/>, 节点路径: WelcomeUi.Background
+    /// </summary>
+    public Background L_Background
+    {
+        get
+        {
+            if (_L_Background == null) _L_Background = new Background((WelcomeUiPanel)this, GetNode<Godot.ColorRect>("Background"));
+            return _L_Background;
+        }
+    }
+    private Background _L_Background;
+
+    /// <summary>
     /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: WelcomeUi.MarginContainer
     /// </summary>
     public MarginContainer L_MarginContainer
@@ -28,6 +41,15 @@ public abstract partial class WelcomeUi : UiBase
     public sealed override void OnInitNestedUi()
     {
 
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.ColorRect"/>, 路径: WelcomeUi.Background
+    /// </summary>
+    public class Background : UiNode<WelcomeUiPanel, Godot.ColorRect, Background>
+    {
+        public Background(WelcomeUiPanel uiPanel, Godot.ColorRect node) : base(uiPanel, node) {  }
+        public override Background Clone() => new (UiPanel, (Godot.ColorRect)Instance.Duplicate());
     }
 
     /// <summary>
@@ -171,6 +193,11 @@ public abstract partial class WelcomeUi : UiBase
         public override MarginContainer Clone() => new (UiPanel, (Godot.MarginContainer)Instance.Duplicate());
     }
 
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.ColorRect"/>, 节点路径: WelcomeUi.Background
+    /// </summary>
+    public Background S_Background => L_Background;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Label

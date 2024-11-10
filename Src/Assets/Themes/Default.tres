@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://5rymabcw2l7g"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://5rymabcw2l7g"]
+
+[ext_resource type="FontFile" uid="uid://wdmopjs77sla" path="res://Assets/Fonts/IBMPlexSans-Regular.otf" id="1_xdplq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wpci"]
 
@@ -14,8 +16,33 @@ bg_color = Color(0.0588235, 0.384314, 0.996078, 1)
 content_margin_left = 16.0
 bg_color = Color(0, 0.176471, 0.611765, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa0b7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iy5e"]
+content_margin_left = 16.0
+bg_color = Color(0.854902, 0.854902, 0.854902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl28y"]
+content_margin_left = 16.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6vma"]
+content_margin_left = 16.0
+bg_color = Color(0.72549, 0.72549, 0.72549, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8wo4e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpnc3"]
+bg_color = Color(0.956863, 0.956863, 0.956863, 1)
+border_width_bottom = 1
+border_color = Color(0.552941, 0.552941, 0.552941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r70ri"]
+bg_color = Color(0.956863, 0.956863, 0.956863, 1)
+border_color = Color(0.552941, 0.552941, 0.552941, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ios8"]
-bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+bg_color = Color(0.956863, 0.956863, 0.956863, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qj84q"]
 
@@ -31,16 +58,65 @@ bg_color = Color(0.223529, 0.223529, 0.223529, 1)
 content_margin_left = 16.0
 bg_color = Color(0.435294, 0.435294, 0.435294, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_748iq"]
+content_margin_left = 16.0
+bg_color = Color(0, 0.313726, 0.901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0588235, 0.384314, 0.996078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bi87"]
+content_margin_left = 16.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0588235, 0.384314, 0.996078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj5e6"]
+content_margin_left = 16.0
+bg_color = Color(0, 0.313726, 0.901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0588235, 0.384314, 0.996078, 1)
+
 [resource]
+default_font = ExtResource("1_xdplq")
 default_font_size = 14
 Button/styles/focus = SubResource("StyleBoxEmpty_6wpci")
 Button/styles/hover = SubResource("StyleBoxFlat_5irr3")
 Button/styles/normal = SubResource("StyleBoxFlat_jkx57")
 Button/styles/pressed = SubResource("StyleBoxFlat_op5xl")
+GhostBtn/base_type = &"Button"
+GhostBtn/colors/font_color = Color(0.0588235, 0.384314, 0.996078, 1)
+GhostBtn/colors/font_focus_color = Color(0.0588235, 0.384314, 0.996078, 1)
+GhostBtn/colors/font_hover_color = Color(0, 0.262745, 0.807843, 1)
+GhostBtn/styles/focus = SubResource("StyleBoxEmpty_wa0b7")
+GhostBtn/styles/hover = SubResource("StyleBoxFlat_7iy5e")
+GhostBtn/styles/normal = SubResource("StyleBoxFlat_yl28y")
+GhostBtn/styles/pressed = SubResource("StyleBoxFlat_b6vma")
 Label/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+LineEdit/colors/caret_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+LineEdit/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+LineEdit/colors/font_placeholder_color = Color(0.658824, 0.658824, 0.658824, 1)
+LineEdit/colors/font_uneditable_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_8wo4e")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_tpnc3")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_r70ri")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_6ios8")
 SecondaryBtn/base_type = &"Button"
 SecondaryBtn/styles/focus = SubResource("StyleBoxEmpty_qj84q")
 SecondaryBtn/styles/hover = SubResource("StyleBoxFlat_77xll")
 SecondaryBtn/styles/normal = SubResource("StyleBoxFlat_2w4lv")
 SecondaryBtn/styles/pressed = SubResource("StyleBoxFlat_knc2w")
+TertiaryBtn/base_type = &"Button"
+TertiaryBtn/colors/font_color = Color(0.0588235, 0.384314, 0.996078, 1)
+TertiaryBtn/colors/font_hover_color = Color(1, 1, 1, 1)
+TertiaryBtn/styles/hover = SubResource("StyleBoxFlat_748iq")
+TertiaryBtn/styles/normal = SubResource("StyleBoxFlat_1bi87")
+TertiaryBtn/styles/pressed = SubResource("StyleBoxFlat_cj5e6")

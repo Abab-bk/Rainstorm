@@ -49,4 +49,4 @@ settings/test/test_lookup_folder="Scripts"
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.956863, 0.956863, 0.956863, 1)
+environment/defaults/default_clear_color=Color(0.174984, 0.174985, 0.174984, 1)

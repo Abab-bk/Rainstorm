@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using DsUi;
+using Game.Scripts.Configs;
+using Game.Scripts.Ui.Modal;
 using Game.Scripts.Ui.NewProjectPopup;
 using Godot;
 
@@ -8,13 +10,22 @@ namespace Game.Scripts.Classes;
 
 public partial class NewProjectProcessor : Node
 {
-    private NewProjectPopupPanel _popupPanel;
+    private ModalPanel _modal;
     
     public override void _Ready()
     {
-        _popupPanel = UiManager.Open_NewProjectPopup();
-        _popupPanel.OnDestroyUiEvent += Destroy;
-        _popupPanel.RequestCreateNewProject += NewProject;
+        var newProjectPopup = NewProjectPopupPanel.Create();
+        _modal = UiManager.Open_Modal().Config(new ModalConfig("New Project")
+        {
+            Slot = newProjectPopup,
+            Action1 = new ActionWithName(
+                "Confirm",
+                () =>
+                {
+                    NewProject(newProjectPopup.GetProjectInfo());
+                }
+            )
+        });
     }
 
     private void NewProject(NewProjectInfo newProjectInfo)
@@ -33,8 +44,6 @@ public partial class NewProjectProcessor : Node
                           name = {newProjectInfo.Name}
                           """);
             writer.Close();
-            
-            _popupPanel.Destroy();
         }
         catch (Exception e)
         {

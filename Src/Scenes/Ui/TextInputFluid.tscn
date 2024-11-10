@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://djlxtynglgto"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/textInputFluid/TextInputFluidPanel.cs" id="1_l3422"]
+[ext_resource type="Theme" uid="uid://5rymabcw2l7g" path="res://Assets/Themes/Default.tres" id="1_ro78c"]
+[ext_resource type="LabelSettings" uid="uid://bgjps1tkr801l" path="res://Assets/LabelSettings/TextSecondary.tres" id="3_doyss"]
+
+[node name="TextInputFluid" type="Control"]
+custom_minimum_size = Vector2(288, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 288.0
+offset_bottom = 48.0
+theme = ExtResource("1_ro78c")
+script = ExtResource("1_l3422")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Label"
+label_settings = ExtResource("3_doyss")
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Placeholder text"
+context_menu_enabled = false
