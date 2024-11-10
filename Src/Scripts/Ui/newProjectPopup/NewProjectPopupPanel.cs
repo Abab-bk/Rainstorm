@@ -1,4 +1,4 @@
-using Game.Scripts.Classes;
+using Game.Scripts.Data;
 using Godot;
 using NativeFileDialogSharp;
 
@@ -26,10 +26,10 @@ public partial class NewProjectPopupPanel : NewProjectPopup
         };
     }
 
-    public NewProjectInfo GetProjectInfo() => new ()
+    public Project GetProject() => new ()
     {
         Name = S_ProjectNameEdit.Instance.Text,
-        Path = _result.Path ?? ""
+        Path = _result.Path
     };
 
     public override void OnDestroyUi()

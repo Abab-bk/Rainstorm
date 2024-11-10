@@ -9,6 +9,7 @@ public static partial class UiManager
         public const string Hud = "Hud";
         public const string Modal = "Modal";
         public const string NewProjectPopup = "NewProjectPopup";
+        public const string ProjectItem = "ProjectItem";
         public const string TextInputFluid = "TextInputFluid";
         public const string UiShellHeader = "UiShellHeader";
         public const string WelcomeUi = "WelcomeUi";
@@ -156,6 +157,54 @@ public static partial class UiManager
     public static Game.Scripts.Ui.NewProjectPopup.NewProjectPopupPanel[] Get_NewProjectPopup_Instance()
     {
         return GetUiInstance<Game.Scripts.Ui.NewProjectPopup.NewProjectPopupPanel>(nameof(Game.Scripts.Ui.NewProjectPopup.NewProjectPopup));
+    }
+
+    /// <summary>
+    /// 创建 ProjectItem, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.ProjectItem.ProjectItemPanel Create_ProjectItem()
+    {
+        return CreateUi<Game.Scripts.Ui.ProjectItem.ProjectItemPanel>(UiName.ProjectItem);
+    }
+
+    /// <summary>
+    /// 打开 ProjectItem, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.ProjectItem.ProjectItemPanel Open_ProjectItem()
+    {
+        return OpenUi<Game.Scripts.Ui.ProjectItem.ProjectItemPanel>(UiName.ProjectItem);
+    }
+
+    /// <summary>
+    /// 隐藏 ProjectItem 的所有实例
+    /// </summary>
+    public static void Hide_ProjectItem()
+    {
+        var uiInstance = Get_ProjectItem_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 ProjectItem 的所有实例
+    /// </summary>
+    public static void Destroy_ProjectItem()
+    {
+        var uiInstance = Get_ProjectItem_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 ProjectItem 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.ProjectItem.ProjectItemPanel[] Get_ProjectItem_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.ProjectItem.ProjectItemPanel>(nameof(Game.Scripts.Ui.ProjectItem.ProjectItem));
     }
 
     /// <summary>

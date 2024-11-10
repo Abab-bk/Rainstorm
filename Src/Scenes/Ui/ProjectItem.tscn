@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://caxctmvk1c2ls"]
+
+[ext_resource type="Script" path="res://Scripts/Ui/projectItem/ProjectItemPanel.cs" id="1_p0ojc"]
+[ext_resource type="Theme" uid="uid://5rymabcw2l7g" path="res://Assets/Themes/Default.tres" id="1_tsi1e"]
+[ext_resource type="FontFile" uid="uid://wdmopjs77sla" path="res://Assets/Fonts/IBMPlexSans-Regular.otf" id="3_fgeqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgmup"]
+font = ExtResource("3_fgeqe")
+font_size = 20
+font_color = Color(0.926225, 0.926225, 0.926225, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jibc8"]
+font = ExtResource("3_fgeqe")
+font_size = 12
+font_color = Color(0.922737, 0.922737, 0.922737, 1)
+
+[node name="ProjectItem" type="Control"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme = ExtResource("1_tsi1e")
+script = ExtResource("1_p0ojc")
+
+[node name="PanelContainer" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SecondaryBtn"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Project Name"
+label_settings = SubResource("LabelSettings_qgmup")
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Project Path"
+label_settings = SubResource("LabelSettings_jibc8")

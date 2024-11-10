@@ -2,6 +2,7 @@
 using System.IO;
 using DsUi;
 using Game.Scripts.Configs;
+using Game.Scripts.Data;
 using Game.Scripts.Ui.Modal;
 using Game.Scripts.Ui.NewProjectPopup;
 using Godot;
@@ -22,15 +23,15 @@ public partial class NewProjectProcessor : Node
                 "Confirm",
                 () =>
                 {
-                    NewProject(newProjectPopup.GetProjectInfo());
+                    NewProject(newProjectPopup.GetProject());
                 }
             )
         });
     }
 
-    private void NewProject(NewProjectInfo newProjectInfo)
+    private void NewProject(Project project)
     {
-        var projectFilePath = Path.Combine(newProjectInfo.Path, "Project.toml");
+        var projectFilePath = Path.Combine(project.Path, $"{project.Name}.rainstorm");
         try
         {
             if (!File.Exists(projectFilePath))
@@ -39,10 +40,7 @@ public partial class NewProjectProcessor : Node
             }
 
             var writer = new StreamWriter(projectFilePath);
-            writer.Write($"""
-                          [ProjectInfo]
-                          name = {newProjectInfo.Name}
-                          """);
+            writer.Write(project.ToToml());
             writer.Close();
         }
         catch (Exception e)

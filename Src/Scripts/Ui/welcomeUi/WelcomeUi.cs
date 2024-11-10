@@ -53,7 +53,7 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer.Label
+    /// 类型: <see cref="Godot.Label"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Label
     /// </summary>
     public class Label : UiNode<WelcomeUiPanel, Godot.Label, Label>
     {
@@ -62,7 +62,7 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.NewProjectBtn
+    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.NewProjectBtn
     /// </summary>
     public class NewProjectBtn : UiNode<WelcomeUiPanel, Godot.Button, NewProjectBtn>
     {
@@ -71,7 +71,7 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.LoadProjectBtn
+    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.LoadProjectBtn
     /// </summary>
     public class LoadProjectBtn : UiNode<WelcomeUiPanel, Godot.Button, LoadProjectBtn>
     {
@@ -80,7 +80,7 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.ExitBtn
+    /// 类型: <see cref="Godot.Button"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.ExitBtn
     /// </summary>
     public class ExitBtn : UiNode<WelcomeUiPanel, Godot.Button, ExitBtn>
     {
@@ -89,12 +89,12 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons
     /// </summary>
     public class Buttons : UiNode<WelcomeUiPanel, Godot.VBoxContainer, Buttons>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.NewProjectBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.NewProjectBtn
         /// </summary>
         public NewProjectBtn L_NewProjectBtn
         {
@@ -107,7 +107,7 @@ public abstract partial class WelcomeUi : UiBase
         private NewProjectBtn _L_NewProjectBtn;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.LoadProjectBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.LoadProjectBtn
         /// </summary>
         public LoadProjectBtn L_LoadProjectBtn
         {
@@ -120,7 +120,7 @@ public abstract partial class WelcomeUi : UiBase
         private LoadProjectBtn _L_LoadProjectBtn;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.ExitBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.ExitBtn
         /// </summary>
         public ExitBtn L_ExitBtn
         {
@@ -137,12 +137,12 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer
     /// </summary>
     public class VBoxContainer : UiNode<WelcomeUiPanel, Godot.VBoxContainer, VBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.Label
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.Label
         /// </summary>
         public Label L_Label
         {
@@ -155,7 +155,7 @@ public abstract partial class WelcomeUi : UiBase
         private Label _L_Label;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.Buttons
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.Buttons
         /// </summary>
         public Buttons L_Buttons
         {
@@ -172,12 +172,65 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: WelcomeUi.MarginContainer
+    /// 类型: <see cref="Godot.Label"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recently
     /// </summary>
-    public class MarginContainer : UiNode<WelcomeUiPanel, Godot.MarginContainer, MarginContainer>
+    public class Recently : UiNode<WelcomeUiPanel, Godot.Label, Recently>
+    {
+        public Recently(WelcomeUiPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
+        public override Recently Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.VBoxContainer
+    /// </summary>
+    public class VBoxContainer_1 : UiNode<WelcomeUiPanel, Godot.VBoxContainer, VBoxContainer_1>
+    {
+        public VBoxContainer_1(WelcomeUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override VBoxContainer_1 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2
+    /// </summary>
+    public class VBoxContainer2 : UiNode<WelcomeUiPanel, Godot.VBoxContainer, VBoxContainer2>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.Recently
+        /// </summary>
+        public Recently L_Recently
+        {
+            get
+            {
+                if (_L_Recently == null) _L_Recently = new Recently(UiPanel, Instance.GetNode<Godot.Label>("Recently"));
+                return _L_Recently;
+            }
+        }
+        private Recently _L_Recently;
+
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer
+        /// </summary>
+        public VBoxContainer_1 L_VBoxContainer
+        {
+            get
+            {
+                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer_1(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
+                return _L_VBoxContainer;
+            }
+        }
+        private VBoxContainer_1 _L_VBoxContainer;
+
+        public VBoxContainer2(WelcomeUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override VBoxContainer2 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer
+    /// </summary>
+    public class HBoxContainer : UiNode<WelcomeUiPanel, Godot.HBoxContainer, HBoxContainer>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer
         /// </summary>
         public VBoxContainer L_VBoxContainer
         {
@@ -188,6 +241,41 @@ public abstract partial class WelcomeUi : UiBase
             }
         }
         private VBoxContainer _L_VBoxContainer;
+
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer2
+        /// </summary>
+        public VBoxContainer2 L_VBoxContainer2
+        {
+            get
+            {
+                if (_L_VBoxContainer2 == null) _L_VBoxContainer2 = new VBoxContainer2(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer2"));
+                return _L_VBoxContainer2;
+            }
+        }
+        private VBoxContainer2 _L_VBoxContainer2;
+
+        public HBoxContainer(WelcomeUiPanel uiPanel, Godot.HBoxContainer node) : base(uiPanel, node) {  }
+        public override HBoxContainer Clone() => new (UiPanel, (Godot.HBoxContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: WelcomeUi.MarginContainer
+    /// </summary>
+    public class MarginContainer : UiNode<WelcomeUiPanel, Godot.MarginContainer, MarginContainer>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: WelcomeUi.HBoxContainer
+        /// </summary>
+        public HBoxContainer L_HBoxContainer
+        {
+            get
+            {
+                if (_L_HBoxContainer == null) _L_HBoxContainer = new HBoxContainer(UiPanel, Instance.GetNode<Godot.HBoxContainer>("HBoxContainer"));
+                return _L_HBoxContainer;
+            }
+        }
+        private HBoxContainer _L_HBoxContainer;
 
         public MarginContainer(WelcomeUiPanel uiPanel, Godot.MarginContainer node) : base(uiPanel, node) {  }
         public override MarginContainer Clone() => new (UiPanel, (Godot.MarginContainer)Instance.Duplicate());
@@ -200,34 +288,44 @@ public abstract partial class WelcomeUi : UiBase
     public Background S_Background => L_Background;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Label
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Label
     /// </summary>
-    public Label S_Label => L_MarginContainer.L_VBoxContainer.L_Label;
+    public Label S_Label => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Label;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.NewProjectBtn
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.NewProjectBtn
     /// </summary>
-    public NewProjectBtn S_NewProjectBtn => L_MarginContainer.L_VBoxContainer.L_Buttons.L_NewProjectBtn;
+    public NewProjectBtn S_NewProjectBtn => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Buttons.L_NewProjectBtn;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.LoadProjectBtn
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.LoadProjectBtn
     /// </summary>
-    public LoadProjectBtn S_LoadProjectBtn => L_MarginContainer.L_VBoxContainer.L_Buttons.L_LoadProjectBtn;
+    public LoadProjectBtn S_LoadProjectBtn => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Buttons.L_LoadProjectBtn;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons.ExitBtn
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons.ExitBtn
     /// </summary>
-    public ExitBtn S_ExitBtn => L_MarginContainer.L_VBoxContainer.L_Buttons.L_ExitBtn;
+    public ExitBtn S_ExitBtn => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Buttons.L_ExitBtn;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer.Buttons
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer.Buttons
     /// </summary>
-    public Buttons S_Buttons => L_MarginContainer.L_VBoxContainer.L_Buttons;
+    public Buttons S_Buttons => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Buttons;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.VBoxContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recently
     /// </summary>
-    public VBoxContainer S_VBoxContainer => L_MarginContainer.L_VBoxContainer;
+    public Recently S_Recently => L_MarginContainer.L_HBoxContainer.L_VBoxContainer2.L_Recently;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2
+    /// </summary>
+    public VBoxContainer2 S_VBoxContainer2 => L_MarginContainer.L_HBoxContainer.L_VBoxContainer2;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer
+    /// </summary>
+    public HBoxContainer S_HBoxContainer => L_MarginContainer.L_HBoxContainer;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: WelcomeUi.MarginContainer
