@@ -29,7 +29,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Libs\AcidUtilities\AcidUtilities.csproj" />
-    <ProjectReference Include="..\Libs\Luban\Luban.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="GDTask" Version="1.2.2" />
