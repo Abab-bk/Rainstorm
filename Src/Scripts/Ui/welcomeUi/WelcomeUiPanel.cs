@@ -1,12 +1,13 @@
+using DsUi;
 using Game.Scripts.Classes;
 using Game.Scripts.Data;
+using Game.Scripts.Ui.ProjectItem;
 using NativeFileDialogSharp;
 
 namespace Game.Scripts.Ui.WelcomeUi;
 
 public partial class WelcomeUiPanel : WelcomeUi
 {
-
     public override void OnCreateUi()
     {
         S_NewProjectBtn.Instance.Pressed += () =>
@@ -29,6 +30,22 @@ public partial class WelcomeUiPanel : WelcomeUi
         S_ExitBtn.Instance.Pressed += () =>
         {
             GetTree().Quit();
+        };
+
+        EventBus.RecentProjectsChanged += projects =>
+        {
+            foreach (var child in S_RecentProjects.Instance.GetChildren())
+            {
+                if (child is not ProjectItemPanel panel) continue;
+                panel.Destroy();
+            }
+            
+            foreach (var projectItem in projects)
+            {
+                S_RecentProjects
+                    .OpenNestedUi<ProjectItemPanel>(UiManager.UiName.ProjectItem)
+                    .Config(projectItem);
+            }
         };
     }
 

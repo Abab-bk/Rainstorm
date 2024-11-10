@@ -172,21 +172,21 @@ public abstract partial class WelcomeUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recently
+    /// 类型: <see cref="Godot.Label"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recent
     /// </summary>
-    public class Recently : UiNode<WelcomeUiPanel, Godot.Label, Recently>
+    public class Recent : UiNode<WelcomeUiPanel, Godot.Label, Recent>
     {
-        public Recently(WelcomeUiPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
-        public override Recently Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
+        public Recent(WelcomeUiPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
+        public override Recent Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.RecentProjects
     /// </summary>
-    public class VBoxContainer_1 : UiNode<WelcomeUiPanel, Godot.VBoxContainer, VBoxContainer_1>
+    public class RecentProjects : UiNode<WelcomeUiPanel, Godot.VBoxContainer, RecentProjects>
     {
-        public VBoxContainer_1(WelcomeUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
-        public override VBoxContainer_1 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+        public RecentProjects(WelcomeUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override RecentProjects Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
     }
 
     /// <summary>
@@ -195,30 +195,30 @@ public abstract partial class WelcomeUi : UiBase
     public class VBoxContainer2 : UiNode<WelcomeUiPanel, Godot.VBoxContainer, VBoxContainer2>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.Recently
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.Recent
         /// </summary>
-        public Recently L_Recently
+        public Recent L_Recent
         {
             get
             {
-                if (_L_Recently == null) _L_Recently = new Recently(UiPanel, Instance.GetNode<Godot.Label>("Recently"));
-                return _L_Recently;
+                if (_L_Recent == null) _L_Recent = new Recent(UiPanel, Instance.GetNode<Godot.Label>("Recent"));
+                return _L_Recent;
             }
         }
-        private Recently _L_Recently;
+        private Recent _L_Recent;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.RecentProjects
         /// </summary>
-        public VBoxContainer_1 L_VBoxContainer
+        public RecentProjects L_RecentProjects
         {
             get
             {
-                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer_1(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
-                return _L_VBoxContainer;
+                if (_L_RecentProjects == null) _L_RecentProjects = new RecentProjects(UiPanel, Instance.GetNode<Godot.VBoxContainer>("RecentProjects"));
+                return _L_RecentProjects;
             }
         }
-        private VBoxContainer_1 _L_VBoxContainer;
+        private RecentProjects _L_RecentProjects;
 
         public VBoxContainer2(WelcomeUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
         public override VBoxContainer2 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
@@ -313,9 +313,19 @@ public abstract partial class WelcomeUi : UiBase
     public Buttons S_Buttons => L_MarginContainer.L_HBoxContainer.L_VBoxContainer.L_Buttons;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recently
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer
     /// </summary>
-    public Recently S_Recently => L_MarginContainer.L_HBoxContainer.L_VBoxContainer2.L_Recently;
+    public VBoxContainer S_VBoxContainer => L_MarginContainer.L_HBoxContainer.L_VBoxContainer;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.Recent
+    /// </summary>
+    public Recent S_Recent => L_MarginContainer.L_HBoxContainer.L_VBoxContainer2.L_Recent;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2.RecentProjects
+    /// </summary>
+    public RecentProjects S_RecentProjects => L_MarginContainer.L_HBoxContainer.L_VBoxContainer2.L_RecentProjects;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: WelcomeUi.MarginContainer.HBoxContainer.VBoxContainer2

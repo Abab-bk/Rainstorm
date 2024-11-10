@@ -42,6 +42,8 @@ public partial class NewProjectProcessor : Node
             var writer = new StreamWriter(projectFilePath);
             writer.Write(project.ToToml());
             writer.Close();
+            
+            EventBus.EnterProject(Project.FromTomlFile(projectFilePath));
         }
         catch (Exception e)
         {

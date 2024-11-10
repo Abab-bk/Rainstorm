@@ -29,9 +29,13 @@ public partial class World : Node2D
             case "PreBoot":
                 Global.World = this;
                 _stateMachine.SetTrigger("ToBooting");
+                
                 break;
             case "Booting":
                 UiManager.Open_WelcomeUi();
+                
+                // load
+                AppSaver.Load();
                 
                 _stateMachine.SetTrigger("ToInitGame");
                 break;

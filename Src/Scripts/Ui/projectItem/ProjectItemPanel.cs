@@ -1,18 +1,11 @@
-using Godot;
-
 namespace Game.Scripts.Ui.ProjectItem;
 
 public partial class ProjectItemPanel : ProjectItem
 {
-
-    public override void OnCreateUi()
+    public ProjectItemPanel Config(Configs.ProjectItem config)
     {
-        
+        S_Name.Instance.Text = config.Name;
+        S_Path.Instance.Text = config.Path;
+        return this;
     }
-
-    public override void OnDestroyUi()
-    {
-        
-    }
-
 }

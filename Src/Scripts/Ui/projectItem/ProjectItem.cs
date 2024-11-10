@@ -31,21 +31,21 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Label
+    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Name
     /// </summary>
-    public class Label : UiNode<ProjectItemPanel, Godot.Label, Label>
+    public class Name : UiNode<ProjectItemPanel, Godot.Label, Name>
     {
-        public Label(ProjectItemPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
-        public override Label Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
+        public Name(ProjectItemPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
+        public override Name Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Label2
+    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Path
     /// </summary>
-    public class Label2 : UiNode<ProjectItemPanel, Godot.Label, Label2>
+    public class Path : UiNode<ProjectItemPanel, Godot.Label, Path>
     {
-        public Label2(ProjectItemPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
-        public override Label2 Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
+        public Path(ProjectItemPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
+        public override Path Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
     }
 
     /// <summary>
@@ -54,30 +54,30 @@ public abstract partial class ProjectItem : UiBase
     public class VBoxContainer : UiNode<ProjectItemPanel, Godot.VBoxContainer, VBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Label
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Name
         /// </summary>
-        public Label L_Label
+        public Name L_Name
         {
             get
             {
-                if (_L_Label == null) _L_Label = new Label(UiPanel, Instance.GetNode<Godot.Label>("Label"));
-                return _L_Label;
+                if (_L_Name == null) _L_Name = new Name(UiPanel, Instance.GetNode<Godot.Label>("Name"));
+                return _L_Name;
             }
         }
-        private Label _L_Label;
+        private Name _L_Name;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Label2
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Path
         /// </summary>
-        public Label2 L_Label2
+        public Path L_Path
         {
             get
             {
-                if (_L_Label2 == null) _L_Label2 = new Label2(UiPanel, Instance.GetNode<Godot.Label>("Label2"));
-                return _L_Label2;
+                if (_L_Path == null) _L_Path = new Path(UiPanel, Instance.GetNode<Godot.Label>("Path"));
+                return _L_Path;
             }
         }
-        private Label2 _L_Label2;
+        private Path _L_Path;
 
         public VBoxContainer(ProjectItemPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
         public override VBoxContainer Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
@@ -129,14 +129,14 @@ public abstract partial class ProjectItem : UiBase
 
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Label
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Name
     /// </summary>
-    public Label S_Label => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Label;
+    public Name S_Name => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Name;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Label2
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Path
     /// </summary>
-    public Label2 S_Label2 => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Label2;
+    public Path S_Path => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Path;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer
