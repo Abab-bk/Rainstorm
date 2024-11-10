@@ -10,6 +10,7 @@ public static partial class UiManager
         public const string Modal = "Modal";
         public const string NewProjectPopup = "NewProjectPopup";
         public const string TextInputFluid = "TextInputFluid";
+        public const string UiShellHeader = "UiShellHeader";
         public const string WelcomeUi = "WelcomeUi";
     }
 
@@ -203,6 +204,54 @@ public static partial class UiManager
     public static Game.Scripts.Ui.TextInputFluid.TextInputFluidPanel[] Get_TextInputFluid_Instance()
     {
         return GetUiInstance<Game.Scripts.Ui.TextInputFluid.TextInputFluidPanel>(nameof(Game.Scripts.Ui.TextInputFluid.TextInputFluid));
+    }
+
+    /// <summary>
+    /// 创建 UiShellHeader, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel Create_UiShellHeader()
+    {
+        return CreateUi<Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel>(UiName.UiShellHeader);
+    }
+
+    /// <summary>
+    /// 打开 UiShellHeader, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel Open_UiShellHeader()
+    {
+        return OpenUi<Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel>(UiName.UiShellHeader);
+    }
+
+    /// <summary>
+    /// 隐藏 UiShellHeader 的所有实例
+    /// </summary>
+    public static void Hide_UiShellHeader()
+    {
+        var uiInstance = Get_UiShellHeader_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 UiShellHeader 的所有实例
+    /// </summary>
+    public static void Destroy_UiShellHeader()
+    {
+        var uiInstance = Get_UiShellHeader_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 UiShellHeader 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel[] Get_UiShellHeader_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.UiShellHeader.UiShellHeaderPanel>(nameof(Game.Scripts.Ui.UiShellHeader.UiShellHeader));
     }
 
     /// <summary>

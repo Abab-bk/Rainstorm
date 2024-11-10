@@ -1,18 +1,28 @@
-using Godot;
+using Game.Scripts.Configs;
 
 namespace Game.Scripts.Ui.Hud;
 
 public partial class HudPanel : Hud
 {
-
-    public override void OnCreateUi()
+    private enum Page
     {
-        
+        Editor,
+        Settings
+    }
+    
+    public override void _Ready()
+    {
+        base._Ready();
+
+        S_UiShellHeader.Instance.SetButtons(
+            [
+                new ActionWithName("Editor", () => { ChangePage(Page.Editor); }),
+                new ActionWithName("Settings", () => { ChangePage(Page.Settings); })
+            ]
+            );
     }
 
-    public override void OnDestroyUi()
+    private void ChangePage(Page page)
     {
-        
     }
-
 }

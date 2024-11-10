@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=21 format=3 uid="uid://5rymabcw2l7g"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://5rymabcw2l7g"]
 
 [ext_resource type="FontFile" uid="uid://wdmopjs77sla" path="res://Assets/Fonts/IBMPlexSans-Regular.otf" id="1_xdplq"]
 
@@ -29,6 +29,31 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6vma"]
 content_margin_left = 16.0
 bg_color = Color(0.72549, 0.72549, 0.72549, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ao55h"]
+color = Color(0.776471, 0.776471, 0.776471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uwhe"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.945098, 0.945098, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyk64"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.776471, 0.776471, 0.776471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahmkb"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbauy"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 3
+border_color = Color(0.0588235, 0.384314, 0.996078, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8wo4e"]
 
@@ -100,6 +125,17 @@ GhostBtn/styles/focus = SubResource("StyleBoxEmpty_wa0b7")
 GhostBtn/styles/hover = SubResource("StyleBoxFlat_7iy5e")
 GhostBtn/styles/normal = SubResource("StyleBoxFlat_yl28y")
 GhostBtn/styles/pressed = SubResource("StyleBoxFlat_b6vma")
+HSeparator/styles/separator = SubResource("StyleBoxLine_ao55h")
+HeaderMenuItemBtn/base_type = &"Button"
+HeaderMenuItemBtn/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+HeaderMenuItemBtn/colors/font_focus_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+HeaderMenuItemBtn/colors/font_hover_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+HeaderMenuItemBtn/colors/font_hover_pressed_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+HeaderMenuItemBtn/colors/font_pressed_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+HeaderMenuItemBtn/styles/hover = SubResource("StyleBoxFlat_1uwhe")
+HeaderMenuItemBtn/styles/hover_pressed = SubResource("StyleBoxFlat_yyk64")
+HeaderMenuItemBtn/styles/normal = SubResource("StyleBoxFlat_ahmkb")
+HeaderMenuItemBtn/styles/pressed = SubResource("StyleBoxFlat_tbauy")
 Label/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 LineEdit/colors/caret_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 LineEdit/colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
