@@ -9,17 +9,16 @@ public static class AppSaver
 {
     static AppSaver()
     {
+        EventBus.RequestSave += Save;
         EventBus.EnterProject += project =>
         {
-            Global.AppConfig.RecentProjects.Add(
-                new ProjectItem
-                {
+            Global.AppConfig.AddRecentProject(
+                new ProjectItem {
                     Name = project.Name,
                     Path = project.Path
                 }
                 );
             Save();
-            EventBus.RecentProjectsChanged?.Invoke(Global.AppConfig.RecentProjects);
         };
     }
 
@@ -36,13 +35,14 @@ public static class AppSaver
                 var content = reader.ReadToEnd();
                 Global.AppConfig = Toml.ToModel<AppConfig>(content);
                 reader.Close();
+                reader.Dispose();
                 EventBus.RecentProjectsChanged?.Invoke(Global.AppConfig.RecentProjects);
                 return;
             }
 
-            Logger.Log("[AppLoader]: No app config file found, create a new one. Location: ", projectFilePath);
+            Logger.Log("[AppLoader]: No app config file found.");
             Global.AppConfig = new AppConfig();
-            File.Create(projectFilePath).Close();
+            // File.Create(projectFilePath).Close();
         }
         catch (Exception e)
         {
@@ -56,15 +56,7 @@ public static class AppSaver
         var projectFilePath = GetConfigFilePath();
         try
         {
-            if (!File.Exists(projectFilePath))
-            {
-                File.Create(projectFilePath).Close();
-            }
-
-            var writer = new StreamWriter(projectFilePath);
-            writer.Write(Toml.FromModel(Global.AppConfig));
-            writer.Close();
-            
+            File.WriteAllText(projectFilePath, Toml.FromModel(Global.AppConfig));
             Logger.Log("[AppSaver]: Config saved. Location: ", projectFilePath);;
         }
         catch (Exception e)

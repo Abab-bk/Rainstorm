@@ -24,7 +24,15 @@ public partial class World : Node2D
             UiManager.Open_Hud().Config(new ProjectWriter(project));
         };
     }
-    
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Save"))
+        {
+            EventBus.RequestSave?.Invoke();
+        }
+    }
+
     private void OnStateMachineUpdate(string state, float delta)
     {
     }
