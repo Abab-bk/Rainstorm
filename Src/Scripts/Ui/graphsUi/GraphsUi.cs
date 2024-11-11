@@ -33,25 +33,25 @@ public abstract partial class GraphsUi : UiBase
         inst1.L_SearchBarUi.Instance.OnCreateUi();
         inst1.L_SearchBarUi.Instance.OnInitNestedUi();
 
-        var inst2 = L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage;
-        RecordNestedUi(inst2.L_LabelWithToolTipBtn.Instance, inst2, UiManager.RecordType.Open);
-        inst2.L_LabelWithToolTipBtn.Instance.OnCreateUi();
-        inst2.L_LabelWithToolTipBtn.Instance.OnInitNestedUi();
+        var inst2 = L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage;
+        RecordNestedUi(inst2.L_SourceImageTitle.Instance, inst2, UiManager.RecordType.Open);
+        inst2.L_SourceImageTitle.Instance.OnCreateUi();
+        inst2.L_SourceImageTitle.Instance.OnInitNestedUi();
 
-        var inst3 = L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier;
-        RecordNestedUi(inst3.L_LabelWithToolTipBtn.Instance, inst3, UiManager.RecordType.Open);
-        inst3.L_LabelWithToolTipBtn.Instance.OnCreateUi();
-        inst3.L_LabelWithToolTipBtn.Instance.OnInitNestedUi();
+        var inst3 = L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier;
+        RecordNestedUi(inst3.L_IdentifierTitle.Instance, inst3, UiManager.RecordType.Open);
+        inst3.L_IdentifierTitle.Instance.OnCreateUi();
+        inst3.L_IdentifierTitle.Instance.OnInitNestedUi();
 
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.Button
+    /// 类型: <see cref="Godot.Button"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.NewGraphBtn
     /// </summary>
-    public class Button : UiNode<GraphsUiPanel, Godot.Button, Button>
+    public class NewGraphBtn : UiNode<GraphsUiPanel, Godot.Button, NewGraphBtn>
     {
-        public Button(GraphsUiPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
-        public override Button Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
+        public NewGraphBtn(GraphsUiPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
+        public override NewGraphBtn Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
     }
 
     /// <summary>
@@ -71,12 +71,12 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer.GraphButtons
     /// </summary>
-    public class VBoxContainer_1 : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer_1>
+    public class GraphButtons : UiNode<GraphsUiPanel, Godot.VBoxContainer, GraphButtons>
     {
-        public VBoxContainer_1(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
-        public override VBoxContainer_1 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+        public GraphButtons(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override GraphButtons Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
     }
 
     /// <summary>
@@ -85,17 +85,17 @@ public abstract partial class GraphsUi : UiBase
     public class ScrollContainer : UiNode<GraphsUiPanel, Godot.ScrollContainer, ScrollContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.GraphButtons
         /// </summary>
-        public VBoxContainer_1 L_VBoxContainer
+        public GraphButtons L_GraphButtons
         {
             get
             {
-                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer_1(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
-                return _L_VBoxContainer;
+                if (_L_GraphButtons == null) _L_GraphButtons = new GraphButtons(UiPanel, Instance.GetNode<Godot.VBoxContainer>("GraphButtons"));
+                return _L_GraphButtons;
             }
         }
-        private VBoxContainer_1 _L_VBoxContainer;
+        private GraphButtons _L_GraphButtons;
 
         public ScrollContainer(GraphsUiPanel uiPanel, Godot.ScrollContainer node) : base(uiPanel, node) {  }
         public override ScrollContainer Clone() => new (UiPanel, (Godot.ScrollContainer)Instance.Duplicate());
@@ -129,17 +129,17 @@ public abstract partial class GraphsUi : UiBase
     public class VBoxContainer : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.Button
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.NewGraphBtn
         /// </summary>
-        public Button L_Button
+        public NewGraphBtn L_NewGraphBtn
         {
             get
             {
-                if (_L_Button == null) _L_Button = new Button(UiPanel, Instance.GetNode<Godot.Button>("Button"));
-                return _L_Button;
+                if (_L_NewGraphBtn == null) _L_NewGraphBtn = new NewGraphBtn(UiPanel, Instance.GetNode<Godot.Button>("NewGraphBtn"));
+                return _L_NewGraphBtn;
             }
         }
-        private Button _L_Button;
+        private NewGraphBtn _L_NewGraphBtn;
 
         /// <summary>
         /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.SearchBarUi
@@ -172,14 +172,45 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.LabelWithToolTipBtn
+    /// 类型: <see cref="Godot.Label"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.Control.Label
     /// </summary>
-    public class LabelWithToolTipBtn : UiNode<GraphsUiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel, LabelWithToolTipBtn>
+    public class Label : UiNode<GraphsUiPanel, Godot.Label, Label>
     {
-        public LabelWithToolTipBtn(GraphsUiPanel uiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel node) : base(uiPanel, node) {  }
-        public override LabelWithToolTipBtn Clone()
+        public Label(GraphsUiPanel uiPanel, Godot.Label node) : base(uiPanel, node) {  }
+        public override Label Clone() => new (UiPanel, (Godot.Label)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.Control"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.Control
+    /// </summary>
+    public class Control : UiNode<GraphsUiPanel, Godot.Control, Control>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.Label
+        /// </summary>
+        public Label L_Label
         {
-            var uiNode = new LabelWithToolTipBtn(UiPanel, (Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel)Instance.Duplicate());
+            get
+            {
+                if (_L_Label == null) _L_Label = new Label(UiPanel, Instance.GetNode<Godot.Label>("Label"));
+                return _L_Label;
+            }
+        }
+        private Label _L_Label;
+
+        public Control(GraphsUiPanel uiPanel, Godot.Control node) : base(uiPanel, node) {  }
+        public override Control Clone() => new (UiPanel, (Godot.Control)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.SourceImageTitle
+    /// </summary>
+    public class SourceImageTitle : UiNode<GraphsUiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel, SourceImageTitle>
+    {
+        public SourceImageTitle(GraphsUiPanel uiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel node) : base(uiPanel, node) {  }
+        public override SourceImageTitle Clone()
+        {
+            var uiNode = new SourceImageTitle(UiPanel, (Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel)Instance.Duplicate());
             UiPanel.RecordNestedUi(uiNode.Instance, this, UiManager.RecordType.Open);
             uiNode.Instance.OnCreateUi();
             uiNode.Instance.OnInitNestedUi();
@@ -188,7 +219,7 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.LineEdit"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.LineEdit
+    /// 类型: <see cref="Godot.LineEdit"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.LineEdit
     /// </summary>
     public class LineEdit : UiNode<GraphsUiPanel, Godot.LineEdit, LineEdit>
     {
@@ -197,7 +228,7 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.TextureButton"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.TextureButton
+    /// 类型: <see cref="Godot.TextureButton"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.TextureButton
     /// </summary>
     public class TextureButton : UiNode<GraphsUiPanel, Godot.TextureButton, TextureButton>
     {
@@ -206,12 +237,12 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer
+    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer
     /// </summary>
     public class HBoxContainer : UiNode<GraphsUiPanel, Godot.HBoxContainer, HBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.LineEdit
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.LineEdit
         /// </summary>
         public LineEdit L_LineEdit
         {
@@ -224,7 +255,7 @@ public abstract partial class GraphsUi : UiBase
         private LineEdit _L_LineEdit;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.TextureButton"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.TextureButton
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.TextureButton"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.TextureButton
         /// </summary>
         public TextureButton L_TextureButton
         {
@@ -241,25 +272,25 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage
+    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage
     /// </summary>
     public class SourceImage : UiNode<GraphsUiPanel, Godot.HBoxContainer, SourceImage>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.LabelWithToolTipBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImageTitle
         /// </summary>
-        public LabelWithToolTipBtn L_LabelWithToolTipBtn
+        public SourceImageTitle L_SourceImageTitle
         {
             get
             {
-                if (_L_LabelWithToolTipBtn == null) _L_LabelWithToolTipBtn = new LabelWithToolTipBtn(UiPanel, Instance.GetNode<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>("LabelWithToolTipBtn"));
-                return _L_LabelWithToolTipBtn;
+                if (_L_SourceImageTitle == null) _L_SourceImageTitle = new SourceImageTitle(UiPanel, Instance.GetNode<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>("SourceImageTitle"));
+                return _L_SourceImageTitle;
             }
         }
-        private LabelWithToolTipBtn _L_LabelWithToolTipBtn;
+        private SourceImageTitle _L_SourceImageTitle;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.HBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.HBoxContainer
         /// </summary>
         public HBoxContainer L_HBoxContainer
         {
@@ -276,14 +307,14 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.LabelWithToolTipBtn
+    /// 类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.IdentifierTitle
     /// </summary>
-    public class LabelWithToolTipBtn_1 : UiNode<GraphsUiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel, LabelWithToolTipBtn_1>
+    public class IdentifierTitle : UiNode<GraphsUiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel, IdentifierTitle>
     {
-        public LabelWithToolTipBtn_1(GraphsUiPanel uiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel node) : base(uiPanel, node) {  }
-        public override LabelWithToolTipBtn_1 Clone()
+        public IdentifierTitle(GraphsUiPanel uiPanel, Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel node) : base(uiPanel, node) {  }
+        public override IdentifierTitle Clone()
         {
-            var uiNode = new LabelWithToolTipBtn_1(UiPanel, (Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel)Instance.Duplicate());
+            var uiNode = new IdentifierTitle(UiPanel, (Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel)Instance.Duplicate());
             UiPanel.RecordNestedUi(uiNode.Instance, this, UiManager.RecordType.Open);
             uiNode.Instance.OnCreateUi();
             uiNode.Instance.OnInitNestedUi();
@@ -292,56 +323,56 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.LineEdit"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.LineEdit
+    /// 类型: <see cref="Godot.LineEdit"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.IdentifierLineEdit
     /// </summary>
-    public class LineEdit_1 : UiNode<GraphsUiPanel, Godot.LineEdit, LineEdit_1>
+    public class IdentifierLineEdit : UiNode<GraphsUiPanel, Godot.LineEdit, IdentifierLineEdit>
     {
-        public LineEdit_1(GraphsUiPanel uiPanel, Godot.LineEdit node) : base(uiPanel, node) {  }
-        public override LineEdit_1 Clone() => new (UiPanel, (Godot.LineEdit)Instance.Duplicate());
+        public IdentifierLineEdit(GraphsUiPanel uiPanel, Godot.LineEdit node) : base(uiPanel, node) {  }
+        public override IdentifierLineEdit Clone() => new (UiPanel, (Godot.LineEdit)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier
+    /// 类型: <see cref="Godot.HBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier
     /// </summary>
     public class Identifier : UiNode<GraphsUiPanel, Godot.HBoxContainer, Identifier>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.LabelWithToolTipBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.IdentifierTitle
         /// </summary>
-        public LabelWithToolTipBtn_1 L_LabelWithToolTipBtn
+        public IdentifierTitle L_IdentifierTitle
         {
             get
             {
-                if (_L_LabelWithToolTipBtn == null) _L_LabelWithToolTipBtn = new LabelWithToolTipBtn_1(UiPanel, Instance.GetNode<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>("LabelWithToolTipBtn"));
-                return _L_LabelWithToolTipBtn;
+                if (_L_IdentifierTitle == null) _L_IdentifierTitle = new IdentifierTitle(UiPanel, Instance.GetNode<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>("IdentifierTitle"));
+                return _L_IdentifierTitle;
             }
         }
-        private LabelWithToolTipBtn_1 _L_LabelWithToolTipBtn;
+        private IdentifierTitle _L_IdentifierTitle;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.LineEdit
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.IdentifierLineEdit
         /// </summary>
-        public LineEdit_1 L_LineEdit
+        public IdentifierLineEdit L_IdentifierLineEdit
         {
             get
             {
-                if (_L_LineEdit == null) _L_LineEdit = new LineEdit_1(UiPanel, Instance.GetNode<Godot.LineEdit>("LineEdit"));
-                return _L_LineEdit;
+                if (_L_IdentifierLineEdit == null) _L_IdentifierLineEdit = new IdentifierLineEdit(UiPanel, Instance.GetNode<Godot.LineEdit>("IdentifierLineEdit"));
+                return _L_IdentifierLineEdit;
             }
         }
-        private LineEdit_1 _L_LineEdit;
+        private IdentifierLineEdit _L_IdentifierLineEdit;
 
         public Identifier(GraphsUiPanel uiPanel, Godot.HBoxContainer node) : base(uiPanel, node) {  }
         public override Identifier Clone() => new (UiPanel, (Godot.HBoxContainer)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer
     /// </summary>
-    public class VBoxContainer_3 : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer_3>
+    public class VBoxContainer_2 : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer_2>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.SourceImage
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.SourceImage
         /// </summary>
         public SourceImage L_SourceImage
         {
@@ -354,7 +385,7 @@ public abstract partial class GraphsUi : UiBase
         private SourceImage _L_SourceImage;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.Identifier
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.Identifier
         /// </summary>
         public Identifier L_Identifier
         {
@@ -366,61 +397,17 @@ public abstract partial class GraphsUi : UiBase
         }
         private Identifier _L_Identifier;
 
-        public VBoxContainer_3(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
-        public override VBoxContainer_3 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
-    }
-
-    /// <summary>
-    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer
-    /// </summary>
-    public class MarginContainer_1 : UiNode<GraphsUiPanel, Godot.MarginContainer, MarginContainer_1>
-    {
-        /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.VBoxContainer
-        /// </summary>
-        public VBoxContainer_3 L_VBoxContainer
-        {
-            get
-            {
-                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer_3(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
-                return _L_VBoxContainer;
-            }
-        }
-        private VBoxContainer_3 _L_VBoxContainer;
-
-        public MarginContainer_1(GraphsUiPanel uiPanel, Godot.MarginContainer node) : base(uiPanel, node) {  }
-        public override MarginContainer_1 Clone() => new (UiPanel, (Godot.MarginContainer)Instance.Duplicate());
-    }
-
-    /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer
-    /// </summary>
-    public class VBoxContainer_2 : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer_2>
-    {
-        /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.MarginContainer
-        /// </summary>
-        public MarginContainer_1 L_MarginContainer
-        {
-            get
-            {
-                if (_L_MarginContainer == null) _L_MarginContainer = new MarginContainer_1(UiPanel, Instance.GetNode<Godot.MarginContainer>("MarginContainer"));
-                return _L_MarginContainer;
-            }
-        }
-        private MarginContainer_1 _L_MarginContainer;
-
         public VBoxContainer_2(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
         public override VBoxContainer_2 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer
+    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer
     /// </summary>
-    public class MarginContainer : UiNode<GraphsUiPanel, Godot.MarginContainer, MarginContainer>
+    public class MarginContainer_1 : UiNode<GraphsUiPanel, Godot.MarginContainer, MarginContainer_1>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.VBoxContainer
         /// </summary>
         public VBoxContainer_2 L_VBoxContainer
         {
@@ -432,17 +419,74 @@ public abstract partial class GraphsUi : UiBase
         }
         private VBoxContainer_2 _L_VBoxContainer;
 
+        public MarginContainer_1(GraphsUiPanel uiPanel, Godot.MarginContainer node) : base(uiPanel, node) {  }
+        public override MarginContainer_1 Clone() => new (UiPanel, (Godot.MarginContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer
+    /// </summary>
+    public class VBoxContainer_1 : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer_1>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.MarginContainer
+        /// </summary>
+        public MarginContainer_1 L_MarginContainer
+        {
+            get
+            {
+                if (_L_MarginContainer == null) _L_MarginContainer = new MarginContainer_1(UiPanel, Instance.GetNode<Godot.MarginContainer>("MarginContainer"));
+                return _L_MarginContainer;
+            }
+        }
+        private MarginContainer_1 _L_MarginContainer;
+
+        public VBoxContainer_1(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override VBoxContainer_1 Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer
+    /// </summary>
+    public class MarginContainer : UiNode<GraphsUiPanel, Godot.MarginContainer, MarginContainer>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.VBoxContainer
+        /// </summary>
+        public VBoxContainer_1 L_VBoxContainer
+        {
+            get
+            {
+                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer_1(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
+                return _L_VBoxContainer;
+            }
+        }
+        private VBoxContainer_1 _L_VBoxContainer;
+
         public MarginContainer(GraphsUiPanel uiPanel, Godot.MarginContainer node) : base(uiPanel, node) {  }
         public override MarginContainer Clone() => new (UiPanel, (Godot.MarginContainer)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.ColorRect"/>, 路径: GraphsUi.HSplitContainer.ColorRect
+    /// 类型: <see cref="Godot.TabContainer"/>, 路径: GraphsUi.HSplitContainer.ColorRect.Pages
     /// </summary>
-    public class ColorRect : UiNode<GraphsUiPanel, Godot.ColorRect, ColorRect>
+    public class Pages : UiNode<GraphsUiPanel, Godot.TabContainer, Pages>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: GraphsUi.HSplitContainer.MarginContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Control"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Control
+        /// </summary>
+        public Control L_Control
+        {
+            get
+            {
+                if (_L_Control == null) _L_Control = new Control(UiPanel, Instance.GetNode<Godot.Control>("Control"));
+                return _L_Control;
+            }
+        }
+        private Control _L_Control;
+
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer
         /// </summary>
         public MarginContainer L_MarginContainer
         {
@@ -453,6 +497,28 @@ public abstract partial class GraphsUi : UiBase
             }
         }
         private MarginContainer _L_MarginContainer;
+
+        public Pages(GraphsUiPanel uiPanel, Godot.TabContainer node) : base(uiPanel, node) {  }
+        public override Pages Clone() => new (UiPanel, (Godot.TabContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Godot.ColorRect"/>, 路径: GraphsUi.HSplitContainer.ColorRect
+    /// </summary>
+    public class ColorRect : UiNode<GraphsUiPanel, Godot.ColorRect, ColorRect>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.TabContainer"/>, 节点路径: GraphsUi.HSplitContainer.Pages
+        /// </summary>
+        public Pages L_Pages
+        {
+            get
+            {
+                if (_L_Pages == null) _L_Pages = new Pages(UiPanel, Instance.GetNode<Godot.TabContainer>("Pages"));
+                return _L_Pages;
+            }
+        }
+        private Pages _L_Pages;
 
         public ColorRect(GraphsUiPanel uiPanel, Godot.ColorRect node) : base(uiPanel, node) {  }
         public override ColorRect Clone() => new (UiPanel, (Godot.ColorRect)Instance.Duplicate());
@@ -495,14 +561,19 @@ public abstract partial class GraphsUi : UiBase
 
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.Button
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.NewGraphBtn
     /// </summary>
-    public Button S_Button => L_HSplitContainer.L_VBoxContainer.L_Button;
+    public NewGraphBtn S_NewGraphBtn => L_HSplitContainer.L_VBoxContainer.L_NewGraphBtn;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.SearchBarUi
     /// </summary>
     public SearchBarUi S_SearchBarUi => L_HSplitContainer.L_VBoxContainer.L_SearchBarUi;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer.GraphButtons
+    /// </summary>
+    public GraphButtons S_GraphButtons => L_HSplitContainer.L_VBoxContainer.L_PanelContainer.L_ScrollContainer.L_GraphButtons;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.ScrollContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer
@@ -515,24 +586,59 @@ public abstract partial class GraphsUi : UiBase
     public PanelContainer S_PanelContainer => L_HSplitContainer.L_VBoxContainer.L_PanelContainer;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.TextureButton"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.TextureButton
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.Control.Label
     /// </summary>
-    public TextureButton S_TextureButton => L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_HBoxContainer.L_TextureButton;
+    public Label S_Label => L_HSplitContainer.L_ColorRect.L_Pages.L_Control.L_Label;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Control"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.Control
     /// </summary>
-    public HBoxContainer S_HBoxContainer => L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_HBoxContainer;
+    public Control S_Control => L_HSplitContainer.L_ColorRect.L_Pages.L_Control;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.SourceImageTitle
     /// </summary>
-    public SourceImage S_SourceImage => L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage;
+    public SourceImageTitle S_SourceImageTitle => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_SourceImageTitle;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.LineEdit
     /// </summary>
-    public Identifier S_Identifier => L_HSplitContainer.L_ColorRect.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier;
+    public LineEdit S_LineEdit => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_HBoxContainer.L_LineEdit;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.TextureButton"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer.TextureButton
+    /// </summary>
+    public TextureButton S_TextureButton => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_HBoxContainer.L_TextureButton;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage.HBoxContainer
+    /// </summary>
+    public HBoxContainer S_HBoxContainer => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage.L_HBoxContainer;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.SourceImage
+    /// </summary>
+    public SourceImage S_SourceImage => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_SourceImage;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.IdentifierTitle
+    /// </summary>
+    public IdentifierTitle S_IdentifierTitle => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier.L_IdentifierTitle;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.LineEdit"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier.IdentifierLineEdit
+    /// </summary>
+    public IdentifierLineEdit S_IdentifierLineEdit => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier.L_IdentifierLineEdit;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.MarginContainer.VBoxContainer.MarginContainer.VBoxContainer.Identifier
+    /// </summary>
+    public Identifier S_Identifier => L_HSplitContainer.L_ColorRect.L_Pages.L_MarginContainer.L_VBoxContainer.L_MarginContainer.L_VBoxContainer.L_Identifier;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.TabContainer"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages
+    /// </summary>
+    public Pages S_Pages => L_HSplitContainer.L_ColorRect.L_Pages;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.ColorRect"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect

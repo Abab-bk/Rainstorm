@@ -21,11 +21,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Title"
 label_settings = ExtResource("2_rqcqw")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="ToolTipIcon" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
 self_modulate = Color(0.521569, 0.521569, 0.521569, 1)
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2

@@ -1,18 +1,17 @@
-using Godot;
+using System;
 
 namespace Game.Scripts.Ui.SearchBarUi;
 
 public partial class SearchBarUiPanel : SearchBarUi
 {
-
-    public override void OnCreateUi()
+    public event Action<string> OnQueryChanged;
+    
+    public override void _Ready()
     {
-        
+        base._Ready();
+        S_LineEdit.Instance.TextChanged += text =>
+        {
+            OnQueryChanged?.Invoke(text);
+        };
     }
-
-    public override void OnDestroyUi()
-    {
-        
-    }
-
 }

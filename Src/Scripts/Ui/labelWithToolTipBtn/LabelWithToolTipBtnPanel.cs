@@ -4,15 +4,12 @@ namespace Game.Scripts.Ui.LabelWithToolTipBtn;
 
 public partial class LabelWithToolTipBtnPanel : LabelWithToolTipBtn
 {
-
-    public override void OnCreateUi()
+    [Export] private string _name = "";
+    [Export] private string _toolTip = "";
+    
+    public override void _Ready()
     {
-        
+        base._Ready();
+        S_Label.Instance.Text = _name;
     }
-
-    public override void OnDestroyUi()
-    {
-        
-    }
-
 }

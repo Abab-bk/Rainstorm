@@ -40,12 +40,12 @@ public abstract partial class LabelWithToolTipBtn : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.TextureRect"/>, 路径: LabelWithToolTipBtn.HBoxContainer.TextureRect
+    /// 类型: <see cref="Godot.TextureRect"/>, 路径: LabelWithToolTipBtn.HBoxContainer.ToolTipIcon
     /// </summary>
-    public class TextureRect : UiNode<LabelWithToolTipBtnPanel, Godot.TextureRect, TextureRect>
+    public class ToolTipIcon : UiNode<LabelWithToolTipBtnPanel, Godot.TextureRect, ToolTipIcon>
     {
-        public TextureRect(LabelWithToolTipBtnPanel uiPanel, Godot.TextureRect node) : base(uiPanel, node) {  }
-        public override TextureRect Clone() => new (UiPanel, (Godot.TextureRect)Instance.Duplicate());
+        public ToolTipIcon(LabelWithToolTipBtnPanel uiPanel, Godot.TextureRect node) : base(uiPanel, node) {  }
+        public override ToolTipIcon Clone() => new (UiPanel, (Godot.TextureRect)Instance.Duplicate());
     }
 
     /// <summary>
@@ -67,17 +67,17 @@ public abstract partial class LabelWithToolTipBtn : UiBase
         private Label _L_Label;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.TextureRect"/>, 节点路径: LabelWithToolTipBtn.TextureRect
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.TextureRect"/>, 节点路径: LabelWithToolTipBtn.ToolTipIcon
         /// </summary>
-        public TextureRect L_TextureRect
+        public ToolTipIcon L_ToolTipIcon
         {
             get
             {
-                if (_L_TextureRect == null) _L_TextureRect = new TextureRect(UiPanel, Instance.GetNode<Godot.TextureRect>("TextureRect"));
-                return _L_TextureRect;
+                if (_L_ToolTipIcon == null) _L_ToolTipIcon = new ToolTipIcon(UiPanel, Instance.GetNode<Godot.TextureRect>("ToolTipIcon"));
+                return _L_ToolTipIcon;
             }
         }
-        private TextureRect _L_TextureRect;
+        private ToolTipIcon _L_ToolTipIcon;
 
         public HBoxContainer(LabelWithToolTipBtnPanel uiPanel, Godot.HBoxContainer node) : base(uiPanel, node) {  }
         public override HBoxContainer Clone() => new (UiPanel, (Godot.HBoxContainer)Instance.Duplicate());
@@ -90,9 +90,9 @@ public abstract partial class LabelWithToolTipBtn : UiBase
     public Label S_Label => L_HBoxContainer.L_Label;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.TextureRect"/>, 节点路径: LabelWithToolTipBtn.HBoxContainer.TextureRect
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.TextureRect"/>, 节点路径: LabelWithToolTipBtn.HBoxContainer.ToolTipIcon
     /// </summary>
-    public TextureRect S_TextureRect => L_HBoxContainer.L_TextureRect;
+    public ToolTipIcon S_ToolTipIcon => L_HBoxContainer.L_ToolTipIcon;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.HBoxContainer"/>, 节点路径: LabelWithToolTipBtn.HBoxContainer

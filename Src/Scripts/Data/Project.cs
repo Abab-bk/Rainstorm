@@ -11,6 +11,7 @@ public class Project
     [DataMember] public string Name { get; set; } = "";
     [DataMember] public string Path { get; set; } = "";
     [DataMember] public List<Entity> Entities { get; set; } = new ();
+    [DataMember] public List<Graph> Graphs { get; set; } = new ();
 
     public static Project FromTomlFile(string path)
     {
