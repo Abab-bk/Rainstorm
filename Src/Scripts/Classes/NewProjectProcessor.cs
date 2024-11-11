@@ -31,19 +31,18 @@ public partial class NewProjectProcessor : Node
 
     private void NewProject(Project project)
     {
-        var projectFilePath = Path.Combine(project.Path, $"{project.Name}.rainstorm");
         try
         {
-            if (!File.Exists(projectFilePath))
+            if (!File.Exists(project.Path))
             {
-                File.Create(projectFilePath).Close();
+                File.Create(project.Path).Close();
             }
 
-            var writer = new StreamWriter(projectFilePath);
+            var writer = new StreamWriter(project.Path);
             writer.Write(project.ToToml());
             writer.Close();
             
-            EventBus.EnterProject(Project.FromTomlFile(projectFilePath));
+            EventBus.EnterProject(Project.FromTomlFile(project.Path));
         }
         catch (Exception e)
         {

@@ -23,7 +23,8 @@ grow_horizontal = 2
 theme = ExtResource("1_tsi1e")
 script = ExtResource("1_p0ojc")
 
-[node name="PanelContainer" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,23 +33,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"SecondaryBtn"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
 layout_mode = 2
 offset_right = 1280.0
 offset_bottom = 80.0
 theme_override_constants/margin_left = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Name" type="Label" parent="Button/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Project Name"
 label_settings = SubResource("LabelSettings_qgmup")
 
-[node name="Path" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Path" type="Label" parent="Button/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Project Path"

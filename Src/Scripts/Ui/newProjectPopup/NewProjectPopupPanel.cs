@@ -1,3 +1,4 @@
+using System.IO;
 using Game.Scripts.Data;
 using Godot;
 using NativeFileDialogSharp;
@@ -29,7 +30,7 @@ public partial class NewProjectPopupPanel : NewProjectPopup
     public Project GetProject() => new ()
     {
         Name = S_ProjectNameEdit.Instance.Text,
-        Path = _result.Path
+        Path = Path.Combine(_result.Path, $"{S_ProjectNameEdit.Instance.Text}.rainstorm")
     };
 
     public override void OnDestroyUi()

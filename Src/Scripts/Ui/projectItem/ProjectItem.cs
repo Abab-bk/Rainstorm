@@ -8,17 +8,17 @@ using DsUi;
 public abstract partial class ProjectItem : UiBase
 {
     /// <summary>
-    /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: ProjectItem.PanelContainer
+    /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: ProjectItem.Button
     /// </summary>
-    public PanelContainer L_PanelContainer
+    public Button L_Button
     {
         get
         {
-            if (_L_PanelContainer == null) _L_PanelContainer = new PanelContainer((ProjectItemPanel)this, GetNode<Godot.Button>("PanelContainer"));
-            return _L_PanelContainer;
+            if (_L_Button == null) _L_Button = new Button((ProjectItemPanel)this, GetNode<Godot.Button>("Button"));
+            return _L_Button;
         }
     }
-    private PanelContainer _L_PanelContainer;
+    private Button _L_Button;
 
 
     public ProjectItem() : base(nameof(ProjectItem))
@@ -31,7 +31,7 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Name
+    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.Button.MarginContainer.VBoxContainer.Name
     /// </summary>
     public class Name : UiNode<ProjectItemPanel, Godot.Label, Name>
     {
@@ -40,7 +40,7 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Path
+    /// 类型: <see cref="Godot.Label"/>, 路径: ProjectItem.Button.MarginContainer.VBoxContainer.Path
     /// </summary>
     public class Path : UiNode<ProjectItemPanel, Godot.Label, Path>
     {
@@ -49,12 +49,12 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: ProjectItem.Button.MarginContainer.VBoxContainer
     /// </summary>
     public class VBoxContainer : UiNode<ProjectItemPanel, Godot.VBoxContainer, VBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Name
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.Button.MarginContainer.Name
         /// </summary>
         public Name L_Name
         {
@@ -67,7 +67,7 @@ public abstract partial class ProjectItem : UiBase
         private Name _L_Name;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.Path
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.Button.MarginContainer.Path
         /// </summary>
         public Path L_Path
         {
@@ -84,12 +84,12 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: ProjectItem.PanelContainer.MarginContainer
+    /// 类型: <see cref="Godot.MarginContainer"/>, 路径: ProjectItem.Button.MarginContainer
     /// </summary>
     public class MarginContainer : UiNode<ProjectItemPanel, Godot.MarginContainer, MarginContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: ProjectItem.PanelContainer.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: ProjectItem.Button.VBoxContainer
         /// </summary>
         public VBoxContainer L_VBoxContainer
         {
@@ -106,9 +106,9 @@ public abstract partial class ProjectItem : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: ProjectItem.PanelContainer
+    /// 类型: <see cref="Godot.Button"/>, 路径: ProjectItem.Button
     /// </summary>
-    public class PanelContainer : UiNode<ProjectItemPanel, Godot.Button, PanelContainer>
+    public class Button : UiNode<ProjectItemPanel, Godot.Button, Button>
     {
         /// <summary>
         /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: ProjectItem.MarginContainer
@@ -123,34 +123,34 @@ public abstract partial class ProjectItem : UiBase
         }
         private MarginContainer _L_MarginContainer;
 
-        public PanelContainer(ProjectItemPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
-        public override PanelContainer Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
+        public Button(ProjectItemPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
+        public override Button Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
     }
 
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Name
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.Button.MarginContainer.VBoxContainer.Name
     /// </summary>
-    public Name S_Name => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Name;
+    public Name S_Name => L_Button.L_MarginContainer.L_VBoxContainer.L_Name;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer.Path
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: ProjectItem.Button.MarginContainer.VBoxContainer.Path
     /// </summary>
-    public Path S_Path => L_PanelContainer.L_MarginContainer.L_VBoxContainer.L_Path;
+    public Path S_Path => L_Button.L_MarginContainer.L_VBoxContainer.L_Path;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer.VBoxContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: ProjectItem.Button.MarginContainer.VBoxContainer
     /// </summary>
-    public VBoxContainer S_VBoxContainer => L_PanelContainer.L_MarginContainer.L_VBoxContainer;
+    public VBoxContainer S_VBoxContainer => L_Button.L_MarginContainer.L_VBoxContainer;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: ProjectItem.PanelContainer.MarginContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.MarginContainer"/>, 节点路径: ProjectItem.Button.MarginContainer
     /// </summary>
-    public MarginContainer S_MarginContainer => L_PanelContainer.L_MarginContainer;
+    public MarginContainer S_MarginContainer => L_Button.L_MarginContainer;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: ProjectItem.PanelContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: ProjectItem.Button
     /// </summary>
-    public PanelContainer S_PanelContainer => L_PanelContainer;
+    public Button S_Button => L_Button;
 
 }

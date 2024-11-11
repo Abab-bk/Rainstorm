@@ -9,7 +9,8 @@ public partial class HudPanel : Hud
     private enum Page
     {
         Editor,
-        Settings
+        Settings,
+        Graphs,
     }
     
     public override void _Ready()
@@ -19,9 +20,12 @@ public partial class HudPanel : Hud
         S_UiShellHeader.Instance.SetButtons(
             [
                 new ActionWithName("Editor", () => { ChangePage(Page.Editor); }),
-                new ActionWithName("Settings", () => { ChangePage(Page.Settings); })
+                new ActionWithName("Settings", () => { ChangePage(Page.Settings); }),
+                new ActionWithName("Graphs", () => { ChangePage(Page.Graphs); })
             ]
             );
+        
+        ChangePage(Page.Editor);
     }
 
     public HudPanel Config(ProjectWriter writer)
@@ -33,5 +37,6 @@ public partial class HudPanel : Hud
 
     private void ChangePage(Page page)
     {
+        S_Pages.Instance.CurrentTab = (int)page;
     }
 }

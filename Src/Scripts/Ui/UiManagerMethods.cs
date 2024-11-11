@@ -6,13 +6,114 @@ public static partial class UiManager
 
     public static class UiName
     {
+        public const string EditorUi = "EditorUi";
+        public const string GraphsUi = "GraphsUi";
         public const string Hud = "Hud";
+        public const string LabelWithToolTipBtn = "LabelWithToolTipBtn";
         public const string Modal = "Modal";
         public const string NewProjectPopup = "NewProjectPopup";
         public const string ProjectItem = "ProjectItem";
+        public const string SearchBarUi = "SearchBarUi";
+        public const string SettingsUi = "SettingsUi";
         public const string TextInputFluid = "TextInputFluid";
         public const string UiShellHeader = "UiShellHeader";
         public const string WelcomeUi = "WelcomeUi";
+    }
+
+    /// <summary>
+    /// 创建 EditorUi, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.EditorUi.EditorUiPanel Create_EditorUi()
+    {
+        return CreateUi<Game.Scripts.Ui.EditorUi.EditorUiPanel>(UiName.EditorUi);
+    }
+
+    /// <summary>
+    /// 打开 EditorUi, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.EditorUi.EditorUiPanel Open_EditorUi()
+    {
+        return OpenUi<Game.Scripts.Ui.EditorUi.EditorUiPanel>(UiName.EditorUi);
+    }
+
+    /// <summary>
+    /// 隐藏 EditorUi 的所有实例
+    /// </summary>
+    public static void Hide_EditorUi()
+    {
+        var uiInstance = Get_EditorUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 EditorUi 的所有实例
+    /// </summary>
+    public static void Destroy_EditorUi()
+    {
+        var uiInstance = Get_EditorUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 EditorUi 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.EditorUi.EditorUiPanel[] Get_EditorUi_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.EditorUi.EditorUiPanel>(nameof(Game.Scripts.Ui.EditorUi.EditorUi));
+    }
+
+    /// <summary>
+    /// 创建 GraphsUi, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.GraphsUi.GraphsUiPanel Create_GraphsUi()
+    {
+        return CreateUi<Game.Scripts.Ui.GraphsUi.GraphsUiPanel>(UiName.GraphsUi);
+    }
+
+    /// <summary>
+    /// 打开 GraphsUi, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.GraphsUi.GraphsUiPanel Open_GraphsUi()
+    {
+        return OpenUi<Game.Scripts.Ui.GraphsUi.GraphsUiPanel>(UiName.GraphsUi);
+    }
+
+    /// <summary>
+    /// 隐藏 GraphsUi 的所有实例
+    /// </summary>
+    public static void Hide_GraphsUi()
+    {
+        var uiInstance = Get_GraphsUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 GraphsUi 的所有实例
+    /// </summary>
+    public static void Destroy_GraphsUi()
+    {
+        var uiInstance = Get_GraphsUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 GraphsUi 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.GraphsUi.GraphsUiPanel[] Get_GraphsUi_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.GraphsUi.GraphsUiPanel>(nameof(Game.Scripts.Ui.GraphsUi.GraphsUi));
     }
 
     /// <summary>
@@ -61,6 +162,54 @@ public static partial class UiManager
     public static Game.Scripts.Ui.Hud.HudPanel[] Get_Hud_Instance()
     {
         return GetUiInstance<Game.Scripts.Ui.Hud.HudPanel>(nameof(Game.Scripts.Ui.Hud.Hud));
+    }
+
+    /// <summary>
+    /// 创建 LabelWithToolTipBtn, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel Create_LabelWithToolTipBtn()
+    {
+        return CreateUi<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>(UiName.LabelWithToolTipBtn);
+    }
+
+    /// <summary>
+    /// 打开 LabelWithToolTipBtn, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel Open_LabelWithToolTipBtn()
+    {
+        return OpenUi<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>(UiName.LabelWithToolTipBtn);
+    }
+
+    /// <summary>
+    /// 隐藏 LabelWithToolTipBtn 的所有实例
+    /// </summary>
+    public static void Hide_LabelWithToolTipBtn()
+    {
+        var uiInstance = Get_LabelWithToolTipBtn_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 LabelWithToolTipBtn 的所有实例
+    /// </summary>
+    public static void Destroy_LabelWithToolTipBtn()
+    {
+        var uiInstance = Get_LabelWithToolTipBtn_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 LabelWithToolTipBtn 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel[] Get_LabelWithToolTipBtn_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtnPanel>(nameof(Game.Scripts.Ui.LabelWithToolTipBtn.LabelWithToolTipBtn));
     }
 
     /// <summary>
@@ -205,6 +354,102 @@ public static partial class UiManager
     public static Game.Scripts.Ui.ProjectItem.ProjectItemPanel[] Get_ProjectItem_Instance()
     {
         return GetUiInstance<Game.Scripts.Ui.ProjectItem.ProjectItemPanel>(nameof(Game.Scripts.Ui.ProjectItem.ProjectItem));
+    }
+
+    /// <summary>
+    /// 创建 SearchBarUi, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel Create_SearchBarUi()
+    {
+        return CreateUi<Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel>(UiName.SearchBarUi);
+    }
+
+    /// <summary>
+    /// 打开 SearchBarUi, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel Open_SearchBarUi()
+    {
+        return OpenUi<Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel>(UiName.SearchBarUi);
+    }
+
+    /// <summary>
+    /// 隐藏 SearchBarUi 的所有实例
+    /// </summary>
+    public static void Hide_SearchBarUi()
+    {
+        var uiInstance = Get_SearchBarUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 SearchBarUi 的所有实例
+    /// </summary>
+    public static void Destroy_SearchBarUi()
+    {
+        var uiInstance = Get_SearchBarUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 SearchBarUi 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel[] Get_SearchBarUi_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel>(nameof(Game.Scripts.Ui.SearchBarUi.SearchBarUi));
+    }
+
+    /// <summary>
+    /// 创建 SettingsUi, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.SettingsUi.SettingsUiPanel Create_SettingsUi()
+    {
+        return CreateUi<Game.Scripts.Ui.SettingsUi.SettingsUiPanel>(UiName.SettingsUi);
+    }
+
+    /// <summary>
+    /// 打开 SettingsUi, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.SettingsUi.SettingsUiPanel Open_SettingsUi()
+    {
+        return OpenUi<Game.Scripts.Ui.SettingsUi.SettingsUiPanel>(UiName.SettingsUi);
+    }
+
+    /// <summary>
+    /// 隐藏 SettingsUi 的所有实例
+    /// </summary>
+    public static void Hide_SettingsUi()
+    {
+        var uiInstance = Get_SettingsUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 SettingsUi 的所有实例
+    /// </summary>
+    public static void Destroy_SettingsUi()
+    {
+        var uiInstance = Get_SettingsUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 SettingsUi 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.SettingsUi.SettingsUiPanel[] Get_SettingsUi_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.SettingsUi.SettingsUiPanel>(nameof(Game.Scripts.Ui.SettingsUi.SettingsUi));
     }
 
     /// <summary>

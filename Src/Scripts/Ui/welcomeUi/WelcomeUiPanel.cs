@@ -44,7 +44,10 @@ public partial class WelcomeUiPanel : WelcomeUi
             {
                 S_RecentProjects
                     .OpenNestedUi<ProjectItemPanel>(UiManager.UiName.ProjectItem)
-                    .Config(projectItem);
+                    .Config(projectItem, path =>
+                    {
+                        EventBus.EnterProject(Project.FromTomlFile(path));
+                    });
             }
         };
     }

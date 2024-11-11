@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvn85imgiisa7"]
+[gd_scene load_steps=7 format=3 uid="uid://cvn85imgiisa7"]
 
 [ext_resource type="Script" path="res://Scripts/Ui/hud/HudPanel.cs" id="1_7dxp7"]
 [ext_resource type="Theme" uid="uid://5rymabcw2l7g" path="res://Assets/Themes/Default.tres" id="1_751dw"]
 [ext_resource type="PackedScene" uid="uid://dkd40umgcybvt" path="res://Scenes/Ui/UiShellHeader.tscn" id="2_76xv7"]
+[ext_resource type="PackedScene" uid="uid://dasfxwuojahxl" path="res://Scenes/Ui/EditorUi.tscn" id="4_grcyd"]
+[ext_resource type="PackedScene" uid="uid://6j8yexvjssct" path="res://Scenes/Ui/SettingsUi.tscn" id="4_h4bvl"]
+[ext_resource type="PackedScene" uid="uid://d1j85e6jgoxkm" path="res://Scenes/Ui/GraphsUi.tscn" id="5_eywp2"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -14,6 +17,15 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_751dw")
 script = ExtResource("1_7dxp7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.878431, 0.878431, 0.878431, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,22 +46,24 @@ custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 color = Color(0.776471, 0.776471, 0.776471, 1)
 
-[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+[node name="Pages" type="TabContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-split_offset = 170
+current_tab = 0
+tabs_visible = false
 
-[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/HSplitContainer"]
+[node name="EditorUi" parent="VBoxContainer/Pages" instance=ExtResource("4_grcyd")]
 layout_mode = 2
-theme_override_constants/separation = 0
-theme_override_constants/autohide = 1
-split_offset = 260
+metadata/_tab_index = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HSplitContainer/VSplitContainer"]
+[node name="SettingsUi" parent="VBoxContainer/Pages" instance=ExtResource("4_h4bvl")]
+visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HSplitContainer/VSplitContainer"]
+[node name="GraphsUi" parent="VBoxContainer/Pages" instance=ExtResource("5_eywp2")]
+visible = false
 layout_mode = 2
-
-[node name="Control" type="Control" parent="VBoxContainer/HSplitContainer"]
-layout_mode = 2
+metadata/_tab_index = 2

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=26 format=3 uid="uid://5rymabcw2l7g"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://5rymabcw2l7g"]
 
 [ext_resource type="FontFile" uid="uid://wdmopjs77sla" path="res://Assets/Fonts/IBMPlexSans-Regular.otf" id="1_xdplq"]
 
@@ -83,6 +83,9 @@ bg_color = Color(0.223529, 0.223529, 0.223529, 1)
 content_margin_left = 16.0
 bg_color = Color(0.435294, 0.435294, 0.435294, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41lph"]
+bg_color = Color(0.956863, 0.956863, 0.956863, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_748iq"]
 content_margin_left = 16.0
 bg_color = Color(0, 0.313726, 0.901961, 1)
@@ -150,6 +153,7 @@ SecondaryBtn/styles/focus = SubResource("StyleBoxEmpty_qj84q")
 SecondaryBtn/styles/hover = SubResource("StyleBoxFlat_77xll")
 SecondaryBtn/styles/normal = SubResource("StyleBoxFlat_2w4lv")
 SecondaryBtn/styles/pressed = SubResource("StyleBoxFlat_knc2w")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_41lph")
 TertiaryBtn/base_type = &"Button"
 TertiaryBtn/colors/font_color = Color(0.0588235, 0.384314, 0.996078, 1)
 TertiaryBtn/colors/font_hover_color = Color(1, 1, 1, 1)
