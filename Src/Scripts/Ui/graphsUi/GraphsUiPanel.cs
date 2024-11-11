@@ -19,10 +19,12 @@ public partial class GraphsUiPanel : GraphsUi
         base._Ready();
         S_NewGraphBtn.Instance.Pressed += () =>
         {
-            AddNewGraph(new Graph
-            {
-                Identifier = "New Graph"
-            });
+            Global.ProjectWriter.Project.AddGraph(
+                new Graph
+                {
+                    Identifier = "New Graph"
+                }
+            );
         };
         S_IdentifierLineEdit.Instance.TextChanged += identifier =>
         {
@@ -50,8 +52,57 @@ public partial class GraphsUiPanel : GraphsUi
                 }
             }
         };
+
+        Global.ProjectWriter.Project.OnGraphAdded += graph =>
+        {
+            UpdateGraphs();
+            var button = SearchGraphButton(graph.Identifier);
+            if (button != null)
+            {
+                button.ButtonPressed = true;
+                _selectedGraph = graph;
+                ChangePage(Page.EditGraph);
+            }
+        };
         
+        Global.ProjectWriter.Project.OnGraphRemoved += graph =>
+        {
+            UpdateGraphs();
+            _selectedGraph = null;
+            ChangePage(Page.Default);
+        };
+
         ChangePage(Page.Default);
+
+        UpdateGraphs();
+    }
+
+    private Button SearchGraphButton(string id)
+    {
+        foreach (var child in S_GraphButtons.Instance.GetChildren())
+        {
+            if (child is not Button button) continue;
+            if (button.HasMeta("GraphId") && (string)button.GetMeta("GraphId") == id)
+            {
+                return button;
+            }
+        }
+
+        return null;
+    }
+
+    // FIXME: refactor
+    private void UpdateGraphs()
+    {
+        foreach (var child in S_GraphButtons.Instance.GetChildren())
+        {
+            child.QueueFree();
+        }
+        
+        foreach (var graph in Global.ProjectWriter.Project.Graphs)
+        {
+            AddNewGraph(graph);
+        }
     }
 
     private void AddNewGraph(Graph graph)
@@ -65,13 +116,13 @@ public partial class GraphsUiPanel : GraphsUi
             ButtonGroup = _buttonGroup
         };
         
+        S_GraphButtons.Instance.AddChild(button);
+        
         graph.OnIdentifierChanged += identifier =>
         {
             button.Text = identifier;
             button.SetMeta("GraphId", graph.Identifier);
         };
-    
-        S_GraphButtons.Instance.AddChild(button);
         
         button.Text = graph.Identifier;
         button.SetMeta("GraphId", graph.Identifier);
@@ -81,10 +132,6 @@ public partial class GraphsUiPanel : GraphsUi
             _selectedGraph = graph;
             ChangePage(Page.EditGraph);
         };
-        button.ButtonPressed = true;
-        
-        _selectedGraph = graph;
-        ChangePage(Page.EditGraph);
     }
 
     private void UpdateGraphInfo()

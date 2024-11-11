@@ -20,8 +20,10 @@ public partial class World : Node2D
         
         EventBus.EnterProject += project =>
         {
+            var writer = new ProjectWriter(project);
+            Global.ProjectWriter = writer;
             _stateMachine.SetTrigger("ToEditor");
-            UiManager.Open_Hud().Config(new ProjectWriter(project));
+            UiManager.Open_Hud().Config(writer);
         };
     }
 

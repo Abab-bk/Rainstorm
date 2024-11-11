@@ -13,6 +13,21 @@ public class Project
     [DataMember] public List<Entity> Entities { get; set; } = new ();
     [DataMember] public List<Graph> Graphs { get; set; } = new ();
 
+    public event Action<Graph> OnGraphAdded;
+    public event Action<Graph> OnGraphRemoved;
+    
+    public void AddGraph(Graph graph)
+    {
+        Graphs.Add(graph);
+        OnGraphAdded?.Invoke(graph);
+    }
+    
+    public void RemoveGraph(Graph graph)
+    {
+        Graphs.Remove(graph);
+        OnGraphRemoved?.Invoke(graph);
+    }
+
     public static Project FromTomlFile(string path)
     {
         try
