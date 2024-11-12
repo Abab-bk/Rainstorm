@@ -30,7 +30,7 @@ public partial class NewProjectPopupPanel : NewProjectPopup
     public Project GetProject() => new ()
     {
         Name = S_ProjectNameEdit.Instance.Text,
-        Path = Path.Combine(_result.Path, $"{S_ProjectNameEdit.Instance.Text}.rainstorm")
+        Path = Path.Combine(_result.Path, $"{S_ProjectNameEdit.Instance.Text}.rainstorm"),
     };
 
     public override void OnDestroyUi()

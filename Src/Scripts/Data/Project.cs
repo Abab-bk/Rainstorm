@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
+using Game.Scripts.Repositories;
 using Tomlyn;
 
 namespace Game.Scripts.Data;
@@ -10,24 +10,9 @@ public class Project
 {
     [DataMember] public string Name { get; set; } = "";
     [DataMember] public string Path { get; set; } = "";
-    [DataMember] public List<Entity> Entities { get; set; } = new ();
-    [DataMember] public List<Graph> Graphs { get; set; } = new ();
-
-    public event Action<Graph> OnGraphAdded;
-    public event Action<Graph> OnGraphRemoved;
+    [DataMember] public EntityRepository EntityRepository { get; set; } = new ();
+    [DataMember] public GraphRepository GraphRepository { get; set; } = new ();
     
-    public void AddGraph(Graph graph)
-    {
-        Graphs.Add(graph);
-        OnGraphAdded?.Invoke(graph);
-    }
-    
-    public void RemoveGraph(Graph graph)
-    {
-        Graphs.Remove(graph);
-        OnGraphRemoved?.Invoke(graph);
-    }
-
     public static Project FromTomlFile(string path)
     {
         try
@@ -39,13 +24,8 @@ public class Project
             {
                 ConvertPropertyName = s => s
             });
-            
-            return new Project
-            {
-                Name = model.Name,
-                Path = model.Path,
-                Entities = model.Entities
-            };
+
+            return model;
         }
         catch (Exception e)
         {

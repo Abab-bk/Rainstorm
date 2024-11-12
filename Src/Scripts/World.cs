@@ -18,12 +18,15 @@ public partial class World : Node2D
         
         _stateMachine.SetTrigger("ToPreBoot");
         
-        EventBus.EnterProject += project =>
+        EventBus.EnterProject += _ =>
         {
-            var writer = new ProjectWriter(project);
-            Global.ProjectWriter = writer;
             _stateMachine.SetTrigger("ToEditor");
-            UiManager.Open_Hud().Config(writer);
+        };
+
+        EventBus.EnterProjectBefore += project =>
+        {
+            Global.ProjectWriter = new ProjectWriter(project);
+            EventBus.EnterProject(project);
         };
     }
 
@@ -72,7 +75,7 @@ public partial class World : Node2D
                 break;
             case "InEditor":
                 UiManager.Destroy_WelcomeUi();
-                
+                UiManager.Open_Hud();
                 break;
             case "End":
                 break;

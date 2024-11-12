@@ -42,7 +42,7 @@ public partial class NewProjectProcessor : Node
             writer.Write(project.ToToml());
             writer.Close();
             
-            EventBus.EnterProject(Project.FromTomlFile(project.Path));
+            EventBus.EnterProjectBefore(Project.FromTomlFile(project.Path));
         }
         catch (Exception e)
         {

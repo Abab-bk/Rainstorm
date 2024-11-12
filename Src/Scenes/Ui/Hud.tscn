@@ -66,4 +66,5 @@ metadata/_tab_index = 1
 [node name="GraphsUi" parent="VBoxContainer/Pages" instance=ExtResource("5_eywp2")]
 visible = false
 layout_mode = 2
+Layer = 1
 metadata/_tab_index = 2

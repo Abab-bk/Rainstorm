@@ -3,16 +3,19 @@ using System.Runtime.Serialization;
 
 namespace Game.Scripts.Data;
 
-public class Graph
+public class Graph : IHasIdentifier
 {
     public Action<string> OnIdentifierChanged { get; set; }
     
-    [DataMember] public string Identifier { get; set; } = "";
+    [DataMember] public string Identifier { 
+        get => _identifier;
+        set
+        {
+            _identifier = value;
+            OnIdentifierChanged?.Invoke(Identifier);
+        }
+    }
     [DataMember] public string SourceImagePath { get; set; } = "";
     
-    public void SetIdentifier(string identifier)
-    {
-        Identifier = identifier;
-        OnIdentifierChanged?.Invoke(identifier);
-    }
+    private string _identifier;
 }

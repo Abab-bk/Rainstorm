@@ -7,6 +7,7 @@ namespace Game.Scripts;
 
 public static class EventBus
 {
+    public static Action<Project> EnterProjectBefore { get; set; }
     public static Action<Project> EnterProject { get; set; }
     public static Action<List<ProjectItem>> RecentProjectsChanged { get; set; }
 

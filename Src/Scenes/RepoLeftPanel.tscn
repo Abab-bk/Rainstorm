@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://3qtsv5t7tidr"]
+
+[ext_resource type="Script" path="res://Scripts/Prefabs/RepoLeftPanel.cs" id="1_iyld6"]
+[ext_resource type="PackedScene" uid="uid://bn4prqqn4n4ao" path="res://Scenes/Ui/SearchBarUi.tscn" id="1_jbt75"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r017v"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="RepoLeftPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_iyld6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="NewItemBtn" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"SecondaryBtn"
+text = "New Graph"
+alignment = 0
+
+[node name="SearchBarUi" parent="VBoxContainer" instance=ExtResource("1_jbt75")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r017v")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Items" type="VBoxContainer" parent="VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1j85e6jgoxkm"]
+[gd_scene load_steps=7 format=3 uid="uid://d1j85e6jgoxkm"]
 
 [ext_resource type="Theme" uid="uid://5rymabcw2l7g" path="res://Assets/Themes/Default.tres" id="1_1nxln"]
 [ext_resource type="Script" path="res://Scripts/Ui/graphsUi/GraphsUiPanel.cs" id="1_o6o3y"]
-[ext_resource type="PackedScene" uid="uid://bn4prqqn4n4ao" path="res://Scenes/Ui/SearchBarUi.tscn" id="3_hg5g2"]
+[ext_resource type="PackedScene" uid="uid://3qtsv5t7tidr" path="res://Scenes/RepoLeftPanel.tscn" id="3_sxsnx"]
 [ext_resource type="LabelSettings" uid="uid://dkesgi6d322o6" path="res://Assets/LabelSettings/TextPrimary20.tres" id="4_vu7ke"]
 [ext_resource type="PackedScene" uid="uid://7ik4l88xwsxl" path="res://Scenes/Ui/LabelWithToolTipBtn.tscn" id="5_0ddn8"]
 [ext_resource type="Texture2D" uid="uid://bel14f0ljcedi" path="res://icon.svg" id="5_unfmv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tondn"]
-bg_color = Color(1, 1, 1, 1)
 
 [node name="GraphsUi" type="Control"]
 layout_mode = 3
@@ -29,35 +26,8 @@ grow_horizontal = 2
 grow_vertical = 2
 split_offset = 140
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="RepoLeftPanel" parent="HSplitContainer" instance=ExtResource("3_sxsnx")]
 layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="NewGraphBtn" type="Button" parent="HSplitContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-theme_type_variation = &"SecondaryBtn"
-text = "New Graph"
-alignment = 0
-
-[node name="SearchBarUi" parent="HSplitContainer/VBoxContainer" instance=ExtResource("3_hg5g2")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_tondn")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="GraphButtons" type="VBoxContainer" parent="HSplitContainer/VBoxContainer/PanelContainer/ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="HSplitContainer"]
 layout_mode = 2

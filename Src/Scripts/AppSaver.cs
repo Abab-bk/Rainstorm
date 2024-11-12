@@ -42,7 +42,6 @@ public static class AppSaver
 
             Logger.Log("[AppLoader]: No app config file found.");
             Global.AppConfig = new AppConfig();
-            // File.Create(projectFilePath).Close();
         }
         catch (Exception e)
         {

@@ -1,8 +1,21 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Game.Scripts.Data;
 
-public class Entity
+public class Entity : IHasIdentifier
 {
-    [DataMember] public string Name { get; set; }
+    public Action<string> OnIdentifierChanged { get; set; }
+    
+    [DataMember] public string Identifier
+    {
+        get => _identifier;
+        set
+        {
+            _identifier = value;
+            OnIdentifierChanged?.Invoke(Identifier);
+        }
+    }
+
+    private string _identifier;
 }

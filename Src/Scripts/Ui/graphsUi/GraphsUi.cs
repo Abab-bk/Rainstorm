@@ -28,7 +28,7 @@ public abstract partial class GraphsUi : UiBase
     public sealed override void OnInitNestedUi()
     {
 
-        var inst1 = L_HSplitContainer.L_VBoxContainer;
+        var inst1 = L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer;
         RecordNestedUi(inst1.L_SearchBarUi.Instance, inst1, UiManager.RecordType.Open);
         inst1.L_SearchBarUi.Instance.OnCreateUi();
         inst1.L_SearchBarUi.Instance.OnInitNestedUi();
@@ -46,16 +46,16 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.Button"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.NewGraphBtn
+    /// 类型: <see cref="Godot.Button"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.NewItemBtn
     /// </summary>
-    public class NewGraphBtn : UiNode<GraphsUiPanel, Godot.Button, NewGraphBtn>
+    public class NewItemBtn : UiNode<GraphsUiPanel, Godot.Button, NewItemBtn>
     {
-        public NewGraphBtn(GraphsUiPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
-        public override NewGraphBtn Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
+        public NewItemBtn(GraphsUiPanel uiPanel, Godot.Button node) : base(uiPanel, node) {  }
+        public override NewItemBtn Clone() => new (UiPanel, (Godot.Button)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.SearchBarUi
+    /// 类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.SearchBarUi
     /// </summary>
     public class SearchBarUi : UiNode<GraphsUiPanel, Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel, SearchBarUi>
     {
@@ -71,43 +71,43 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer.GraphButtons
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer.ScrollContainer.Items
     /// </summary>
-    public class GraphButtons : UiNode<GraphsUiPanel, Godot.VBoxContainer, GraphButtons>
+    public class Items : UiNode<GraphsUiPanel, Godot.VBoxContainer, Items>
     {
-        public GraphButtons(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
-        public override GraphButtons Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+        public Items(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
+        public override Items Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.ScrollContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer
+    /// 类型: <see cref="Godot.ScrollContainer"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer.ScrollContainer
     /// </summary>
     public class ScrollContainer : UiNode<GraphsUiPanel, Godot.ScrollContainer, ScrollContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.GraphButtons
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer.Items
         /// </summary>
-        public GraphButtons L_GraphButtons
+        public Items L_Items
         {
             get
             {
-                if (_L_GraphButtons == null) _L_GraphButtons = new GraphButtons(UiPanel, Instance.GetNode<Godot.VBoxContainer>("GraphButtons"));
-                return _L_GraphButtons;
+                if (_L_Items == null) _L_Items = new Items(UiPanel, Instance.GetNode<Godot.VBoxContainer>("Items"));
+                return _L_Items;
             }
         }
-        private GraphButtons _L_GraphButtons;
+        private Items _L_Items;
 
         public ScrollContainer(GraphsUiPanel uiPanel, Godot.ScrollContainer node) : base(uiPanel, node) {  }
         public override ScrollContainer Clone() => new (UiPanel, (Godot.ScrollContainer)Instance.Duplicate());
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.PanelContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer
+    /// 类型: <see cref="Godot.PanelContainer"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer
     /// </summary>
     public class PanelContainer : UiNode<GraphsUiPanel, Godot.PanelContainer, PanelContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.ScrollContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.ScrollContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.ScrollContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.ScrollContainer
         /// </summary>
         public ScrollContainer L_ScrollContainer
         {
@@ -124,25 +124,25 @@ public abstract partial class GraphsUi : UiBase
     }
 
     /// <summary>
-    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.VBoxContainer
+    /// 类型: <see cref="Godot.VBoxContainer"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer
     /// </summary>
     public class VBoxContainer : UiNode<GraphsUiPanel, Godot.VBoxContainer, VBoxContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.NewGraphBtn
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.NewItemBtn
         /// </summary>
-        public NewGraphBtn L_NewGraphBtn
+        public NewItemBtn L_NewItemBtn
         {
             get
             {
-                if (_L_NewGraphBtn == null) _L_NewGraphBtn = new NewGraphBtn(UiPanel, Instance.GetNode<Godot.Button>("NewGraphBtn"));
-                return _L_NewGraphBtn;
+                if (_L_NewItemBtn == null) _L_NewItemBtn = new NewItemBtn(UiPanel, Instance.GetNode<Godot.Button>("NewItemBtn"));
+                return _L_NewItemBtn;
             }
         }
-        private NewGraphBtn _L_NewGraphBtn;
+        private NewItemBtn _L_NewItemBtn;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.SearchBarUi
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.SearchBarUi
         /// </summary>
         public SearchBarUi L_SearchBarUi
         {
@@ -155,7 +155,7 @@ public abstract partial class GraphsUi : UiBase
         private SearchBarUi _L_SearchBarUi;
 
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.PanelContainer"/>, 节点路径: GraphsUi.HSplitContainer.PanelContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.PanelContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.PanelContainer
         /// </summary>
         public PanelContainer L_PanelContainer
         {
@@ -169,6 +169,28 @@ public abstract partial class GraphsUi : UiBase
 
         public VBoxContainer(GraphsUiPanel uiPanel, Godot.VBoxContainer node) : base(uiPanel, node) {  }
         public override VBoxContainer Clone() => new (UiPanel, (Godot.VBoxContainer)Instance.Duplicate());
+    }
+
+    /// <summary>
+    /// 类型: <see cref="Game.Scripts.Prefabs.RepoLeftPanel"/>, 路径: GraphsUi.HSplitContainer.RepoLeftPanel
+    /// </summary>
+    public class RepoLeftPanel : UiNode<GraphsUiPanel, Game.Scripts.Prefabs.RepoLeftPanel, RepoLeftPanel>
+    {
+        /// <summary>
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer
+        /// </summary>
+        public VBoxContainer L_VBoxContainer
+        {
+            get
+            {
+                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
+                return _L_VBoxContainer;
+            }
+        }
+        private VBoxContainer _L_VBoxContainer;
+
+        public RepoLeftPanel(GraphsUiPanel uiPanel, Game.Scripts.Prefabs.RepoLeftPanel node) : base(uiPanel, node) {  }
+        public override RepoLeftPanel Clone() => new (UiPanel, (Game.Scripts.Prefabs.RepoLeftPanel)Instance.Duplicate());
     }
 
     /// <summary>
@@ -530,17 +552,17 @@ public abstract partial class GraphsUi : UiBase
     public class HSplitContainer : UiNode<GraphsUiPanel, Godot.HSplitContainer, HSplitContainer>
     {
         /// <summary>
-        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.VBoxContainer
+        /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Game.Scripts.Prefabs.RepoLeftPanel"/>, 节点路径: GraphsUi.RepoLeftPanel
         /// </summary>
-        public VBoxContainer L_VBoxContainer
+        public RepoLeftPanel L_RepoLeftPanel
         {
             get
             {
-                if (_L_VBoxContainer == null) _L_VBoxContainer = new VBoxContainer(UiPanel, Instance.GetNode<Godot.VBoxContainer>("VBoxContainer"));
-                return _L_VBoxContainer;
+                if (_L_RepoLeftPanel == null) _L_RepoLeftPanel = new RepoLeftPanel(UiPanel, Instance.GetNode<Game.Scripts.Prefabs.RepoLeftPanel>("RepoLeftPanel"));
+                return _L_RepoLeftPanel;
             }
         }
-        private VBoxContainer _L_VBoxContainer;
+        private RepoLeftPanel _L_RepoLeftPanel;
 
         /// <summary>
         /// 使用 Instance 属性获取当前节点实例对象, 节点类型: <see cref="Godot.ColorRect"/>, 节点路径: GraphsUi.ColorRect
@@ -561,29 +583,34 @@ public abstract partial class GraphsUi : UiBase
 
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.NewGraphBtn
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Button"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.NewItemBtn
     /// </summary>
-    public NewGraphBtn S_NewGraphBtn => L_HSplitContainer.L_VBoxContainer.L_NewGraphBtn;
+    public NewItemBtn S_NewItemBtn => L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer.L_NewItemBtn;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.SearchBarUi
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Ui.SearchBarUi.SearchBarUiPanel"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.SearchBarUi
     /// </summary>
-    public SearchBarUi S_SearchBarUi => L_HSplitContainer.L_VBoxContainer.L_SearchBarUi;
+    public SearchBarUi S_SearchBarUi => L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer.L_SearchBarUi;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer.GraphButtons
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.VBoxContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer.ScrollContainer.Items
     /// </summary>
-    public GraphButtons S_GraphButtons => L_HSplitContainer.L_VBoxContainer.L_PanelContainer.L_ScrollContainer.L_GraphButtons;
+    public Items S_Items => L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer.L_PanelContainer.L_ScrollContainer.L_Items;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.ScrollContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer.ScrollContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.ScrollContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer.ScrollContainer
     /// </summary>
-    public ScrollContainer S_ScrollContainer => L_HSplitContainer.L_VBoxContainer.L_PanelContainer.L_ScrollContainer;
+    public ScrollContainer S_ScrollContainer => L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer.L_PanelContainer.L_ScrollContainer;
 
     /// <summary>
-    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.PanelContainer"/>, 节点路径: GraphsUi.HSplitContainer.VBoxContainer.PanelContainer
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.PanelContainer"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel.VBoxContainer.PanelContainer
     /// </summary>
-    public PanelContainer S_PanelContainer => L_HSplitContainer.L_VBoxContainer.L_PanelContainer;
+    public PanelContainer S_PanelContainer => L_HSplitContainer.L_RepoLeftPanel.L_VBoxContainer.L_PanelContainer;
+
+    /// <summary>
+    /// 场景中唯一名称的节点, 节点类型: <see cref="Game.Scripts.Prefabs.RepoLeftPanel"/>, 节点路径: GraphsUi.HSplitContainer.RepoLeftPanel
+    /// </summary>
+    public RepoLeftPanel S_RepoLeftPanel => L_HSplitContainer.L_RepoLeftPanel;
 
     /// <summary>
     /// 场景中唯一名称的节点, 节点类型: <see cref="Godot.Label"/>, 节点路径: GraphsUi.HSplitContainer.ColorRect.Pages.Control.Label
