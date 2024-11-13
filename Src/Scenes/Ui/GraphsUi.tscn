@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1j85e6jgoxkm"]
+[gd_scene load_steps=8 format=3 uid="uid://d1j85e6jgoxkm"]
 
 [ext_resource type="Theme" uid="uid://5rymabcw2l7g" path="res://Assets/Themes/Default.tres" id="1_1nxln"]
 [ext_resource type="Script" path="res://Scripts/Ui/graphsUi/GraphsUiPanel.cs" id="1_o6o3y"]
@@ -6,6 +6,8 @@
 [ext_resource type="LabelSettings" uid="uid://dkesgi6d322o6" path="res://Assets/LabelSettings/TextPrimary20.tres" id="4_vu7ke"]
 [ext_resource type="PackedScene" uid="uid://7ik4l88xwsxl" path="res://Scenes/Ui/LabelWithToolTipBtn.tscn" id="5_0ddn8"]
 [ext_resource type="Texture2D" uid="uid://bel14f0ljcedi" path="res://icon.svg" id="5_unfmv"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bdo4a"]
 
 [node name="GraphsUi" type="Control"]
 layout_mode = 3
@@ -41,10 +43,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
 [node name="Control" type="Control" parent="HSplitContainer/ColorRect/Pages"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -61,7 +64,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/ColorRect/Pages"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 24
@@ -92,11 +94,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="LineEdit" type="LineEdit" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/SourceImage/HBoxContainer"]
+[node name="SourceImageText" type="LineEdit" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/SourceImage/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureButton" type="TextureButton" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/SourceImage/HBoxContainer"]
+[node name="SelectSourceImageBtn" type="TextureButton" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/SourceImage/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 texture_normal = ExtResource("5_unfmv")
@@ -115,3 +119,26 @@ _name = "Identifier"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Mode" type="HBoxContainer" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="IdentifierTitle" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Mode" instance=ExtResource("5_0ddn8")]
+layout_mode = 2
+_name = "Mode"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Mode"]
+layout_mode = 2
+
+[node name="MultipleModeBtn" type="CheckBox" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Mode/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_bdo4a")
+text = "Multiple"
+
+[node name="SingleModeBtn" type="CheckBox" parent="HSplitContainer/ColorRect/Pages/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Mode/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_bdo4a")
+text = "Single"

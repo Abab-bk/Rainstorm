@@ -6,6 +6,7 @@ namespace Game.Scripts.Configs;
 public class AppConfig
 {
     [DataMember] public List<ProjectItem> RecentProjects { get; set; } = new();
+    [DataMember] public float CutterZoomFactor { get; set; } = 1f;
 
     public void AddRecentProject(ProjectItem projectItem)
     {

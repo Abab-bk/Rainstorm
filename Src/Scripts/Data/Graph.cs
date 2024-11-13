@@ -7,7 +7,7 @@ public class Graph : IHasIdentifier
 {
     public Action<string> OnIdentifierChanged { get; set; }
     
-    [DataMember] public string Identifier { 
+    [DataMember] public string Identifier {
         get => _identifier;
         set
         {

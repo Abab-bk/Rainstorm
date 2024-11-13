@@ -9,6 +9,7 @@ public static partial class UiManager
         public const string EditorUi = "EditorUi";
         public const string GraphsUi = "GraphsUi";
         public const string Hud = "Hud";
+        public const string ImageCutterUi = "ImageCutterUi";
         public const string LabelWithToolTipBtn = "LabelWithToolTipBtn";
         public const string Modal = "Modal";
         public const string NewProjectPopup = "NewProjectPopup";
@@ -162,6 +163,54 @@ public static partial class UiManager
     public static Game.Scripts.Ui.Hud.HudPanel[] Get_Hud_Instance()
     {
         return GetUiInstance<Game.Scripts.Ui.Hud.HudPanel>(nameof(Game.Scripts.Ui.Hud.Hud));
+    }
+
+    /// <summary>
+    /// 创建 ImageCutterUi, 并返回UI实例, 该函数不会打开 Ui
+    /// </summary>
+    public static Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel Create_ImageCutterUi()
+    {
+        return CreateUi<Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel>(UiName.ImageCutterUi);
+    }
+
+    /// <summary>
+    /// 打开 ImageCutterUi, 并返回UI实例
+    /// </summary>
+    public static Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel Open_ImageCutterUi()
+    {
+        return OpenUi<Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel>(UiName.ImageCutterUi);
+    }
+
+    /// <summary>
+    /// 隐藏 ImageCutterUi 的所有实例
+    /// </summary>
+    public static void Hide_ImageCutterUi()
+    {
+        var uiInstance = Get_ImageCutterUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.HideUi();
+        }
+    }
+
+    /// <summary>
+    /// 销毁 ImageCutterUi 的所有实例
+    /// </summary>
+    public static void Destroy_ImageCutterUi()
+    {
+        var uiInstance = Get_ImageCutterUi_Instance();
+        foreach (var uiPanel in uiInstance)
+        {
+            uiPanel.Destroy();
+        }
+    }
+
+    /// <summary>
+    /// 获取所有 ImageCutterUi 的实例, 如果没有实例, 则返回一个空数组
+    /// </summary>
+    public static Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel[] Get_ImageCutterUi_Instance()
+    {
+        return GetUiInstance<Game.Scripts.Ui.ImageCutterUi.ImageCutterUiPanel>(nameof(Game.Scripts.Ui.ImageCutterUi.ImageCutterUi));
     }
 
     /// <summary>

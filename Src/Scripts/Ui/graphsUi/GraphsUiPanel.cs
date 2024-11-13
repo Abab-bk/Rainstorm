@@ -1,5 +1,6 @@
 using Game.Scripts.Data;
 using Godot;
+using NativeFileDialogSharp;
 
 namespace Game.Scripts.Ui.GraphsUi;
 
@@ -48,15 +49,27 @@ public partial class GraphsUiPanel : GraphsUi
 
         ChangePage(Page.Default);
     }
-    
+
+    private void SelectSourceImage()
+    {
+        if (_currentGraph == null) return;
+        var result = Dialog.FileOpen("png");
+        if (!result.IsOk) return;
+        
+        _currentGraph.SourceImagePath = result.Path;
+        UpdateGraphInfo();
+    }
+
     private void UpdateGraphInfo()
     {
         if (_currentGraph == null)
         {
+            S_SourceImageText.Instance.Text = "";
             S_IdentifierLineEdit.Instance.Text = "";
             return;
         }
-
+        
+        S_SourceImageText.Instance.Text = _currentGraph.SourceImagePath;
         S_IdentifierLineEdit.Instance.Text = _currentGraph.Identifier;
     }
 
